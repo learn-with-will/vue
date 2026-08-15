@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-23",
+  "lessonId": "lesson-23",
+  "title": "TypeScript with Vue",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the idiomatic way to type a component's props in <script setup>?",
+      "options": [
+        { "id": "a", "text": "Cast them with `as any`" },
+        { "id": "b", "text": "The type-based macro: defineProps<{ ... }>()" },
+        { "id": "c", "text": "In a separate .d.ts file only" },
+        { "id": "d", "text": "You cannot type props" }
+      ],
+      "answer": "b",
+      "explanation": "defineProps<{ ... }>() declares typed props at compile time; withDefaults adds defaults (object/array defaults require a factory function)."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why can't plain tsc type-check your Vue components?",
+      "options": [
+        { "id": "a", "text": "tsc is too slow" },
+        { "id": "b", "text": "tsc doesn't understand the .vue single-file component format; you need vue-tsc" },
+        { "id": "c", "text": "Vue components aren't typed" },
+        { "id": "d", "text": "You must compile to JavaScript first by hand" }
+      ],
+      "answer": "b",
+      "explanation": ".vue SFCs need a Vue-aware checker. vue-tsc (and Volar in the editor) understand SFCs; plain tsc skips them."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How do you type a template ref to a child component instance?",
+      "options": [
+        { "id": "a", "text": "ref<any>(null)" },
+        { "id": "b", "text": "ref<InstanceType<typeof ChildComponent> | null>(null)" },
+        { "id": "c", "text": "ref<ChildComponent>()" },
+        { "id": "d", "text": "reactive(ChildComponent)" }
+      ],
+      "answer": "b",
+      "explanation": "InstanceType<typeof Comp> is the component instance type; the ref is null until mount, so include | null. You can only access members the child exposed via defineExpose."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The Vue-aware tool that type-checks .vue files (used in this project's build) is vue-______. (complete the word)",
+      "answer": ["tsc", "vue-tsc"],
+      "explanation": "vue-tsc type-checks single-file components; this project runs vue-tsc -b before vite build."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "How do you make a component generic so its props relate by type?",
+      "options": [
+        { "id": "a", "text": "Add the generic attribute: <script setup lang=\"ts\" generic=\"T\">" },
+        { "id": "b", "text": "Wrap it in reactive()" },
+        { "id": "c", "text": "Use v-generic in the template" },
+        { "id": "d", "text": "It's not possible in Vue" }
+      ],
+      "answer": "a",
+      "explanation": "Since Vue 3.3, the generic attribute on <script setup> lets you use a type parameter T across defineProps and defineEmits so related props share a type."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "What's a correct way to give a type-based array prop a default value?",
+      "options": [
+        { "id": "a", "text": "withDefaults(defineProps<{ tags?: string[] }>(), { tags: [] })" },
+        { "id": "b", "text": "withDefaults(defineProps<{ tags?: string[] }>(), { tags: () => [] })" },
+        { "id": "c", "text": "defineProps({ tags: [] })" },
+        { "id": "d", "text": "Array defaults aren't allowed" }
+      ],
+      "answer": "b",
+      "explanation": "Object and array prop defaults must be returned from a factory function to avoid sharing one instance across components: { tags: () => [] }."
+    }
+  ]
+}

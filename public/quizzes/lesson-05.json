@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-05",
+  "lessonId": "lesson-05",
+  "title": "Conditional & List Rendering",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the main difference between v-if and v-show?",
+      "options": [
+        { "id": "a", "text": "v-if toggles CSS display; v-show adds/removes the element" },
+        { "id": "b", "text": "v-if adds/removes the element (and is lazy); v-show only toggles the CSS display property" },
+        { "id": "c", "text": "They are identical" },
+        { "id": "d", "text": "v-show only works on the server" }
+      ],
+      "answer": "b",
+      "explanation": "v-if truly creates or destroys the element and is lazy; v-show keeps the element in the DOM and just toggles display, making it cheaper to flip frequently."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why should each v-for item have a stable, unique :key?",
+      "options": [
+        { "id": "a", "text": "It's required syntax or the loop won't run" },
+        { "id": "b", "text": "So Vue can match items across updates and reuse/reorder DOM nodes correctly" },
+        { "id": "c", "text": "To sort the list automatically" },
+        { "id": "d", "text": "To make the list read-only" }
+      ],
+      "answer": "b",
+      "explanation": "The key is a stable identity for each item, letting Vue track items across changes and reuse DOM nodes instead of rebuilding them — preventing subtle state bugs."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "In Vue 3, what happens if you put v-if and v-for on the same element?",
+      "options": [
+        { "id": "a", "text": "v-for runs first, so v-if can filter each item" },
+        { "id": "b", "text": "v-if has higher priority and runs first, so it can't access the loop variable" },
+        { "id": "c", "text": "Vue renders the list twice" },
+        { "id": "d", "text": "It is the recommended pattern" }
+      ],
+      "answer": "b",
+      "explanation": "In Vue 3, v-if takes priority over v-for on the same element, so the loop variable isn't available to the condition. Filter with a computed property instead."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To filter a list before rendering it, do the filtering in a ______ property and loop over the result. (one word)",
+      "answer": ["computed"],
+      "explanation": "Filtering and sorting belong in a computed property; then v-for iterates over the derived list — avoiding the v-if/v-for pitfall."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "v-else must immediately follow a v-if (or v-else-if) element" },
+        { "id": "b", "text": "Using the array index as key is risky for lists that reorder" },
+        { "id": "c", "text": "v-show removes the element from the DOM when false" },
+        { "id": "d", "text": "You can put v-if or v-for on a <template> to group elements without an extra wrapper" }
+      ],
+      "answer": ["a", "b", "d"],
+      "explanation": "v-else must be adjacent; index-as-key breaks on reorder; and <template> groups elements without a real DOM node. v-show does NOT remove the element — it sets display: none."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order these from cheapest to most expensive to TOGGLE repeatedly (visibility on/off many times).",
+      "items": [
+        { "id": "show", "text": "v-show (toggle CSS display)" },
+        { "id": "if", "text": "v-if (create/destroy the element each time)" }
+      ],
+      "answer": ["show", "if"],
+      "explanation": "v-show only flips a CSS property, so it's cheap to toggle repeatedly. v-if creates and destroys the element (and its components/listeners) each time, which costs more per toggle."
+    }
+  ]
+}

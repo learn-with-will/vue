@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-15",
+  "lessonId": "lesson-15",
+  "title": "Vue Router",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does <RouterView> do?",
+      "options": [
+        { "id": "a", "text": "Renders the component matched by the current URL" },
+        { "id": "b", "text": "Creates a new browser tab" },
+        { "id": "c", "text": "Defines the list of routes" },
+        { "id": "d", "text": "Fetches data from an API" }
+      ],
+      "answer": "a",
+      "explanation": "<RouterView> is the outlet where Vue Router renders whichever component matches the current route."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "How do you read a dynamic route parameter :id inside a component?",
+      "options": [
+        { "id": "a", "text": "useRouter().id" },
+        { "id": "b", "text": "useRoute().params.id" },
+        { "id": "c", "text": "this.$params.id" },
+        { "id": "d", "text": "route.query.id only" }
+      ],
+      "answer": "b",
+      "explanation": "useRoute() returns the current route; its params object holds dynamic segments, e.g. route.params.id."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "Why should you use <RouterLink> instead of a plain <a href> for internal navigation?",
+      "options": [
+        { "id": "a", "text": "It looks nicer" },
+        { "id": "b", "text": "It navigates client-side without a full-page reload" },
+        { "id": "c", "text": "Plain <a> tags don't work in Vue" },
+        { "id": "d", "text": "It automatically fetches data" }
+      ],
+      "answer": "b",
+      "explanation": "RouterLink handles the click to navigate within the SPA without reloading the page; a plain <a href> triggers a full reload."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "With createWebHistory (clean URLs), the server must serve index.html for unknown paths — a so-called SPA ______. (one word)",
+      "answer": ["fallback"],
+      "explanation": "History mode needs a SPA fallback so deep-link refreshes serve index.html instead of 404ing. Hash mode avoids this."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "What is a navigation guard like router.beforeEach used for?",
+      "options": [
+        { "id": "a", "text": "Styling links" },
+        { "id": "b", "text": "Running logic (e.g. auth checks) before a navigation completes, to allow, cancel, or redirect it" },
+        { "id": "c", "text": "Lazy-loading images" },
+        { "id": "d", "text": "Defining CSS transitions" }
+      ],
+      "answer": "b",
+      "explanation": "Guards run before a route change; returning false cancels it and returning a location redirects — commonly used to protect authenticated routes."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order these steps to set up Vue Router.",
+      "items": [
+        { "id": "define", "text": "Define the routes array (path → component)" },
+        { "id": "create", "text": "createRouter({ history, routes })" },
+        { "id": "use", "text": "app.use(router)" },
+        { "id": "render", "text": "Add <RouterView> to the template" }
+      ],
+      "answer": ["define", "create", "use", "render"],
+      "explanation": "Define routes, create the router with a history mode, register it on the app with app.use, then render matched components with <RouterView>."
+    }
+  ]
+}

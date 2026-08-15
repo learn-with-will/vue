@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-19",
+  "lessonId": "lesson-19",
+  "title": "Built-in Components: Teleport & Suspense",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does <Teleport to=\"body\"> do?",
+      "options": [
+        { "id": "a", "text": "Sends data to a server called body" },
+        { "id": "b", "text": "Renders its children at a different DOM location (the body) while keeping them logically in your component" },
+        { "id": "c", "text": "Deletes the body element" },
+        { "id": "d", "text": "Disables reactivity" }
+      ],
+      "answer": "b",
+      "explanation": "Teleport moves where children are rendered in the DOM (e.g. to <body>) but keeps their state, props, and events tied to the original component."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why is Teleport useful for modals and tooltips?",
+      "options": [
+        { "id": "a", "text": "It makes them load faster" },
+        { "id": "b", "text": "It lets them escape an ancestor's overflow: hidden or z-index stacking context" },
+        { "id": "c", "text": "It encrypts them" },
+        { "id": "d", "text": "It disables clicks" }
+      ],
+      "answer": "b",
+      "explanation": "Rendering to <body> frees the overlay from ancestor clipping and stacking, a common cause of cut-off or mis-layered modals."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What does <Suspense> coordinate?",
+      "options": [
+        { "id": "a", "text": "CSS transitions" },
+        { "id": "b", "text": "Async dependencies in its subtree, showing a #fallback until they resolve" },
+        { "id": "c", "text": "Routing guards" },
+        { "id": "d", "text": "localStorage writes" }
+      ],
+      "answer": "b",
+      "explanation": "Suspense waits for async descendants (async setup or async components) and displays the #fallback slot until they're ready, then shows #default."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "As of the current docs, Suspense is still marked ______ (its API may change). (one word)",
+      "answer": ["experimental"],
+      "explanation": "Suspense is an experimental feature; its API could change, so use it deliberately."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Does Teleport change a component's logical parent?",
+      "options": [
+        { "id": "a", "text": "Yes, it reparents the component entirely" },
+        { "id": "b", "text": "No — it only moves the DOM location; props, events, and reactivity behave as if in place" },
+        { "id": "c", "text": "Only in the Options API" },
+        { "id": "d", "text": "Only for tooltips" }
+      ],
+      "answer": "b",
+      "explanation": "Teleport changes where content renders in the DOM, not the component hierarchy — the teleported content stays logically part of your component."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "What happens if a Teleport's target selector doesn't exist in the DOM?",
+      "options": [
+        { "id": "a", "text": "Vue creates it automatically" },
+        { "id": "b", "text": "The content has nowhere to render and Vue warns — ensure the target exists (e.g. body)" },
+        { "id": "c", "text": "The app crashes irrecoverably" },
+        { "id": "d", "text": "It renders on the server instead" }
+      ],
+      "answer": "b",
+      "explanation": "The teleport target must exist when the Teleport mounts. Teleporting to body (which always exists) or ensuring the target is present avoids the warning."
+    }
+  ]
+}

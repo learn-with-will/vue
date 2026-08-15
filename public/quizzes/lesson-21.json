@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-21",
+  "lessonId": "lesson-21",
+  "title": "Async Components & Performance",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does defineAsyncComponent do?",
+      "options": [
+        { "id": "a", "text": "Makes a component render on the server" },
+        { "id": "b", "text": "Lazy-loads a component in its own chunk, fetched on first render" },
+        { "id": "c", "text": "Caches a component's state" },
+        { "id": "d", "text": "Adds animations" }
+      ],
+      "answer": "b",
+      "explanation": "defineAsyncComponent wraps a dynamic import so the component's code is split into a chunk loaded only when it's first rendered — shrinking the initial bundle."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "By default, what happens to a component's state when you toggle it off with v-if and back on?",
+      "options": [
+        { "id": "a", "text": "It is preserved automatically" },
+        { "id": "b", "text": "The component is destroyed and recreated, losing its state — unless wrapped in <KeepAlive>" },
+        { "id": "c", "text": "It moves to localStorage" },
+        { "id": "d", "text": "It becomes read-only" }
+      ],
+      "answer": "b",
+      "explanation": "v-if truly removes and recreates the component (losing state). <KeepAlive> caches the instance so state and DOM persist across toggles."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What is the difference between v-once and v-memo?",
+      "options": [
+        { "id": "a", "text": "They are identical" },
+        { "id": "b", "text": "v-once renders a subtree once and never updates it; v-memo re-renders only when its listed dependencies change" },
+        { "id": "c", "text": "v-memo renders once; v-once memoizes deps" },
+        { "id": "d", "text": "Both cache network requests" }
+      ],
+      "answer": "b",
+      "explanation": "v-once freezes a subtree after the first render; v-memo=\"[deps]\" conditionally skips re-rendering unless a dependency changes."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "A kept-alive component fires the onActivated and on______ hooks when shown and hidden. (complete the word)",
+      "answer": ["Deactivated", "deactivated", "onDeactivated"],
+      "explanation": "Inside <KeepAlive>, components use onActivated (shown) and onDeactivated (hidden) instead of mounted/unmounted."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "What is the main risk of using v-memo with an incomplete dependency array?",
+      "options": [
+        { "id": "a", "text": "Larger bundle size" },
+        { "id": "b", "text": "Stale UI — Vue skips updates for changes not listed in the deps" },
+        { "id": "c", "text": "It disables reactivity globally" },
+        { "id": "d", "text": "Nothing; it's always safe" }
+      ],
+      "answer": "b",
+      "explanation": "v-memo only re-renders when a listed dependency changes. If a value the subtree uses isn't in the deps, its changes won't show — a stale UI."
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "prompt": "Which are legitimate everyday performance practices in Vue? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Use stable :key values in v-for" },
+        { "id": "b", "text": "Use computed for cached derived values" },
+        { "id": "c", "text": "Ship a production build (vite build)" },
+        { "id": "d", "text": "Wrap every component in v-once" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Stable keys, cached computeds, and a production build are solid defaults. v-once freezes updates, so blanketing everything with it would break dynamic UI."
+    }
+  ]
+}

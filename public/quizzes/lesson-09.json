@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-09",
+  "lessonId": "lesson-09",
+  "title": "Components Basics & <script setup>",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "In a <script setup> SFC, what do you need to do to use a child component in the template?",
+      "options": [
+        { "id": "a", "text": "Register it in a components: option" },
+        { "id": "b", "text": "Import it in <script setup> — that's enough" },
+        { "id": "c", "text": "Call app.component() globally" },
+        { "id": "d", "text": "Nothing; all components are global" }
+      ],
+      "answer": "b",
+      "explanation": "With <script setup>, importing a component registers it locally, so you can use its tag directly without a components: option."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does <script setup> expose to the template?",
+      "options": [
+        { "id": "a", "text": "Only refs" },
+        { "id": "b", "text": "Every top-level binding (refs, functions, computeds, imported components), with no return statement" },
+        { "id": "c", "text": "Nothing — you must return values" },
+        { "id": "d", "text": "Only functions named render" }
+      ],
+      "answer": "b",
+      "explanation": "All top-level bindings declared in <script setup> are automatically available to the template; there is no return statement."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "Does a Vue 3 component template require a single root element?",
+      "options": [
+        { "id": "a", "text": "Yes, always" },
+        { "id": "b", "text": "No — Vue 3 supports multiple root nodes (fragments)" },
+        { "id": "c", "text": "Only in the Options API" },
+        { "id": "d", "text": "Only if it has styles" }
+      ],
+      "answer": "b",
+      "explanation": "Vue 3 allows multiple root elements in a template, so a single wrapper element is optional."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "By convention, Vue component names are written in ______Case (e.g. UserCard). (one word, the case name)",
+      "answer": ["Pascal", "pascal"],
+      "explanation": "Components are named in PascalCase, matching the imported name and typically the file name."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Which statements about components are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Each use of a component is an independent instance with its own state" },
+        { "id": "b", "text": "Components let you reuse UI and logic" },
+        { "id": "c", "text": "A child component works in <script setup> without being imported" },
+        { "id": "d", "text": "Apps are typically built as a tree of components" }
+      ],
+      "answer": ["a", "b", "d"],
+      "explanation": "Components are reusable, each instance is independent, and apps are trees of them. In <script setup>, a child MUST be imported to be used."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "How does a parent pass data down to a child component?",
+      "options": [
+        { "id": "a", "text": "Through props (attributes on the component tag)" },
+        { "id": "b", "text": "By modifying the child's internal state directly" },
+        { "id": "c", "text": "Through the URL only" },
+        { "id": "d", "text": "It cannot pass data down" }
+      ],
+      "answer": "a",
+      "explanation": "Parents pass data to children via props — custom attributes on the component tag (covered in depth in the next lesson)."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-24",
+  "lessonId": "lesson-24",
+  "title": "Testing & Tooling — Capstone",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does Vue Test Utils' mount() return?",
+      "options": [
+        { "id": "a", "text": "The component's source code" },
+        { "id": "b", "text": "A wrapper you can query, interact with, and inspect" },
+        { "id": "c", "text": "A production build" },
+        { "id": "d", "text": "A router instance" }
+      ],
+      "answer": "b",
+      "explanation": "mount renders the component into a test DOM and returns a wrapper with methods like find, text, trigger, and emitted."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why should you await wrapper.trigger('click') before asserting on the result?",
+      "options": [
+        { "id": "a", "text": "To slow the test down" },
+        { "id": "b", "text": "DOM updates are asynchronous, so awaiting ensures the DOM reflects the change before you assert" },
+        { "id": "c", "text": "trigger returns the component" },
+        { "id": "d", "text": "It's never necessary" }
+      ],
+      "answer": "b",
+      "explanation": "Vue applies updates asynchronously; awaiting the triggered event (or nextTick) lets the DOM update before your assertion runs."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How do you assert that a component emitted an event in a test?",
+      "options": [
+        { "id": "a", "text": "wrapper.emitted('eventName')" },
+        { "id": "b", "text": "wrapper.props('eventName')" },
+        { "id": "c", "text": "wrapper.html('eventName')" },
+        { "id": "d", "text": "console.log only" }
+      ],
+      "answer": "a",
+      "explanation": "wrapper.emitted('eventName') returns the recorded emissions and their payloads, so you can assert the event fired with the right data."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The fast, Vite-native test runner used for Vue unit tests is called ______. (one word)",
+      "answer": ["Vitest", "vitest"],
+      "explanation": "Vitest is a Vite-native test runner that shares your Vite config, so tests understand the same TypeScript and SFC setup."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "What should component tests primarily focus on?",
+      "options": [
+        { "id": "a", "text": "Internal private refs and implementation details" },
+        { "id": "b", "text": "User-visible behavior: rendered output, interactions, and emitted events" },
+        { "id": "c", "text": "The exact number of lines of code" },
+        { "id": "d", "text": "CSS file sizes" }
+      ],
+      "answer": "b",
+      "explanation": "Testing behavior (what the user sees and does, and what the component emits) keeps tests robust when you refactor internals."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order the typical Vite project workflow from start to shipping.",
+      "items": [
+        { "id": "scaffold", "text": "npm create vue@latest (scaffold)" },
+        { "id": "dev", "text": "npm run dev (develop with HMR)" },
+        { "id": "build", "text": "npm run build (vue-tsc + Vite bundle)" },
+        { "id": "deploy", "text": "Deploy the static dist/ output" }
+      ],
+      "answer": ["scaffold", "dev", "build", "deploy"],
+      "explanation": "Scaffold the project, develop with the dev server and HMR, produce a type-checked production build, then deploy the static dist/ files."
+    }
+  ]
+}

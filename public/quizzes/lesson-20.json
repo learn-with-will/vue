@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-20",
+  "lessonId": "lesson-20",
+  "title": "Transitions & Animations",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does the <Transition> component animate?",
+      "options": [
+        { "id": "a", "text": "A whole list of elements" },
+        { "id": "b", "text": "A single element or component as it enters or leaves" },
+        { "id": "c", "text": "Only images" },
+        { "id": "d", "text": "Router navigations only" }
+      ],
+      "answer": "b",
+      "explanation": "<Transition> animates one element/component on enter and leave (triggered by v-if, v-show, a dynamic component, or a key change). Lists use <TransitionGroup>."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which class should carry the CSS transition timing?",
+      "options": [
+        { "id": "a", "text": "v-enter-from" },
+        { "id": "b", "text": "v-enter-active (and v-leave-active)" },
+        { "id": "c", "text": "v-enter-to" },
+        { "id": "d", "text": "v-hidden" }
+      ],
+      "answer": "b",
+      "explanation": "The *-active classes are applied for the whole transition, so the transition/animation declaration goes there; *-from and *-to hold the start and end states."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What does mode=\"out-in\" achieve when swapping elements?",
+      "options": [
+        { "id": "a", "text": "Both elements animate at once" },
+        { "id": "b", "text": "The leaving element finishes animating out before the entering one animates in" },
+        { "id": "c", "text": "It disables the transition" },
+        { "id": "d", "text": "It reverses the animation" }
+      ],
+      "answer": "b",
+      "explanation": "out-in sequences the transition so the old content leaves completely before the new content enters, preventing an awkward overlap."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To animate a list (adding, removing, reordering items), use <Transition______>. (complete the tag name)",
+      "answer": ["Group", "group", "TransitionGroup"],
+      "explanation": "<TransitionGroup> animates lists; each child needs a stable key and reordering uses a *-move class."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Why must <TransitionGroup> children have stable keys (not the index)?",
+      "options": [
+        { "id": "a", "text": "For SEO" },
+        { "id": "b", "text": "Move/enter/leave animations rely on stable item identity; index keys change on reorder and break the animations" },
+        { "id": "c", "text": "Keys are only decorative" },
+        { "id": "d", "text": "To reduce bundle size" }
+      ],
+      "answer": "b",
+      "explanation": "Stable keys let Vue track which item moved where. Index keys shift on reorder, so Vue can't compute correct move transitions."
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "prompt": "Which can trigger a <Transition>? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Toggling v-if" },
+        { "id": "b", "text": "Toggling v-show" },
+        { "id": "c", "text": "Changing a dynamic <component :is>" },
+        { "id": "d", "text": "Changing an element's key" }
+      ],
+      "answer": ["a", "b", "c", "d"],
+      "explanation": "All four trigger enter/leave transitions: v-if, v-show, swapping a dynamic component, and a changing key."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-03",
+  "lessonId": "lesson-03",
+  "title": "Reactivity Fundamentals: ref()",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "How do you read the current value of `const count = ref(0)` inside a <script> block?",
+      "options": [
+        { "id": "a", "text": "count" },
+        { "id": "b", "text": "count.value" },
+        { "id": "c", "text": "count()" },
+        { "id": "d", "text": "count.get()" }
+      ],
+      "answer": "b",
+      "explanation": "In JavaScript you access a ref's inner value through .value (count.value). In templates, top-level refs are auto-unwrapped so you write count."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "In a template, how do you display `const count = ref(0)`?",
+      "options": [
+        { "id": "a", "text": "{{ count.value }}" },
+        { "id": "b", "text": "{{ count }}" },
+        { "id": "c", "text": "{{ ref(count) }}" },
+        { "id": "d", "text": "{{ count() }}" }
+      ],
+      "answer": "b",
+      "explanation": "Templates automatically unwrap top-level refs, so {{ count }} shows the value — no .value needed."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about reactive() are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "It only works on objects, arrays, Map, and Set" },
+        { "id": "b", "text": "Destructuring its properties keeps them reactive" },
+        { "id": "c", "text": "Reassigning the whole object breaks reactivity" },
+        { "id": "d", "text": "It provides deep reactivity for nested properties" }
+      ],
+      "answer": ["a", "c", "d"],
+      "explanation": "reactive works only on collection types, is deep, but breaks if you reassign the whole object. Destructuring its properties DISCONNECTS them from reactivity."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To make a single number reactive, you should use ______(0) rather than reactive(0). (name the function)",
+      "answer": ["ref"],
+      "explanation": "reactive only works on objects, so a primitive number must use ref(0)."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Why does a ref use a .value wrapper instead of just being a plain variable?",
+      "options": [
+        { "id": "a", "text": "To make the code longer on purpose" },
+        { "id": "b", "text": "So Vue can intercept reads and writes of .value to track and trigger reactive updates" },
+        { "id": "c", "text": "Because JavaScript requires all variables to have a .value" },
+        { "id": "d", "text": "To store the value on a server" }
+      ],
+      "answer": "b",
+      "explanation": "JavaScript can't detect access to a plain variable. Wrapping the value in an object lets Vue define a getter/setter on .value and observe every read and write."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "Which is the recommended default for reactive state, and why?",
+      "options": [
+        { "id": "a", "text": "reactive, because it never needs .value" },
+        { "id": "b", "text": "ref, because it holds any type, can be reassigned via .value, and survives being passed around" },
+        { "id": "c", "text": "Plain variables, because they are simplest" },
+        { "id": "d", "text": "It doesn't matter; they behave identically" }
+      ],
+      "answer": "b",
+      "explanation": "ref is the recommended default: it works for primitives and objects, can be reassigned through .value, and doesn't lose reactivity when destructured or passed around."
+    }
+  ]
+}

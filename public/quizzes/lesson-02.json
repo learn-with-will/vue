@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-02",
+  "lessonId": "lesson-02",
+  "title": "Creating an Application & Template Syntax",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does createApp(App).mount('#app') do?",
+      "options": [
+        { "id": "a", "text": "Downloads Vue from a CDN" },
+        { "id": "b", "text": "Creates an app from the root component and renders it into the #app element" },
+        { "id": "c", "text": "Deletes the #app element" },
+        { "id": "d", "text": "Starts a backend server" }
+      ],
+      "answer": "b",
+      "explanation": "createApp builds an application instance from the root component, and .mount('#app') attaches and renders it onto the matching DOM element."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which is the correct way to bind an element's href to a `url` variable?",
+      "options": [
+        { "id": "a", "text": "<a href=\"{{ url }}\">" },
+        { "id": "b", "text": "<a :href=\"url\">" },
+        { "id": "c", "text": "<a href=url>" },
+        { "id": "d", "text": "<a bind-href=\"url\">" }
+      ],
+      "answer": "b",
+      "explanation": "Mustaches don't work in attributes. Use v-bind, whose shorthand is a colon: :href=\"url\"."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "When should you avoid v-html?",
+      "options": [
+        { "id": "a", "text": "Whenever the HTML comes from users or untrusted sources (XSS risk)" },
+        { "id": "b", "text": "Only when the page is in dark mode" },
+        { "id": "c", "text": "Never — it is always safe" },
+        { "id": "d", "text": "Only on the server" }
+      ],
+      "answer": "a",
+      "explanation": "v-html renders a raw HTML string, so untrusted content can inject scripts (cross-site scripting). Use it only with trusted, sanitized HTML."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "A template attribute that starts with `v-` and applies reactive behavior is called a ______. (one word)",
+      "answer": ["directive"],
+      "explanation": "Directives (v-bind, v-on, v-if, v-for, v-model, …) are special v-prefixed attributes that apply reactive behavior to the DOM."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Which statements about template bindings are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "{{ }} inserts a value as plain text" },
+        { "id": "b", "text": "@click is the shorthand for v-on:click" },
+        { "id": "c", "text": "A binding can contain a full if-statement" },
+        { "id": "d", "text": "Binding a value of null or undefined removes the attribute" }
+      ],
+      "answer": ["a", "b", "d"],
+      "explanation": "Interpolation renders text, @ is the v-on shorthand, and null/undefined removes a bound attribute. Bindings accept a single expression, not a statement like an if."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "In `v-on:click.prevent=\"onSubmit\"`, match each part to what it is.",
+      "pairs": [
+        { "left": "v-on", "right": "Directive name" },
+        { "left": "click", "right": "Argument" },
+        { "left": "prevent", "right": "Modifier" },
+        { "left": "onSubmit", "right": "Value (the expression)" }
+      ],
+      "explanation": "A directive has a name (v-on), an optional argument after the colon (click), optional modifiers after dots (prevent), and a value expression (onSubmit)."
+    }
+  ]
+}

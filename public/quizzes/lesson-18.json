@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-18",
+  "lessonId": "lesson-18",
+  "title": "Reactivity in Depth",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What JavaScript feature powers Vue 3's reactivity for objects?",
+      "options": [
+        { "id": "a", "text": "Object.defineProperty on every property" },
+        { "id": "b", "text": "Proxies (with get/set traps that track and trigger)" },
+        { "id": "c", "text": "Web Workers" },
+        { "id": "d", "text": "localStorage" }
+      ],
+      "answer": "b",
+      "explanation": "Vue 3 uses Proxies: reads are tracked and writes trigger dependent effects to re-run. (Vue 2 used Object.defineProperty.)"
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does shallowRef track?",
+      "options": [
+        { "id": "a", "text": "Every nested property deeply" },
+        { "id": "b", "text": "Only reassignment of its .value, not deep mutations" },
+        { "id": "c", "text": "Nothing at all" },
+        { "id": "d", "text": "Only arrays" }
+      ],
+      "answer": "b",
+      "explanation": "shallowRef reacts to .value being reassigned but not to deep mutations of the held object; use triggerRef to force an update after a deep change."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What is customRef used for?",
+      "options": [
+        { "id": "a", "text": "Styling refs" },
+        { "id": "b", "text": "Creating a ref with custom control over when it tracks and triggers (e.g. a debounced ref)" },
+        { "id": "c", "text": "Making refs read-only" },
+        { "id": "d", "text": "Routing" }
+      ],
+      "answer": "b",
+      "explanation": "customRef gives you track and trigger functions so you decide exactly when the ref records a dependency and notifies effects — perfect for debounce/throttle."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To flag an object so Vue never makes it reactive, wrap it with mark______. (complete the word)",
+      "answer": ["Raw", "raw", "markRaw"],
+      "explanation": "markRaw prevents an object from being converted into a reactive proxy — useful for third-party instances or large inert data."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You deeply mutate a shallowRef's held object and the UI doesn't update. What's a correct fix?",
+      "options": [
+        { "id": "a", "text": "Call triggerRef(theRef) or reassign theRef.value" },
+        { "id": "b", "text": "Nothing can update it" },
+        { "id": "c", "text": "Wrap it in markRaw" },
+        { "id": "d", "text": "Use v-once" }
+      ],
+      "answer": "a",
+      "explanation": "shallowRef only reacts to .value reassignment, so either reassign .value or call triggerRef to force dependent effects to re-run."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each reactivity tool to its purpose.",
+      "pairs": [
+        { "left": "shallowRef", "right": "Track only top-level .value reassignment" },
+        { "left": "customRef", "right": "Custom control of track/trigger (e.g. debounce)" },
+        { "left": "toRaw", "right": "Get the original non-proxied object" },
+        { "left": "markRaw", "right": "Prevent an object from becoming reactive" }
+      ],
+      "explanation": "shallowRef limits depth, customRef customizes timing, toRaw unwraps a proxy, and markRaw opts an object out of reactivity entirely."
+    }
+  ]
+}

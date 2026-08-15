@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-12",
+  "lessonId": "lesson-12",
+  "title": "Slots",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What do slots let a parent pass into a child that props cannot?",
+      "options": [
+        { "id": "a", "text": "Numbers" },
+        { "id": "b", "text": "Template markup / content" },
+        { "id": "c", "text": "CSS files" },
+        { "id": "d", "text": "Environment variables" }
+      ],
+      "answer": "b",
+      "explanation": "Props pass data values; slots pass template markup, letting the parent supply content that the child renders in a <slot> outlet."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What is the content written between <slot>…</slot> tags?",
+      "options": [
+        { "id": "a", "text": "It is ignored" },
+        { "id": "b", "text": "Fallback content, shown only when the parent provides nothing for that slot" },
+        { "id": "c", "text": "The slot's name" },
+        { "id": "d", "text": "A required prop" }
+      ],
+      "answer": "b",
+      "explanation": "Content inside a <slot> is fallback content; it renders only if the parent doesn't fill that slot."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "How does a parent fill a named slot called \"footer\"?",
+      "options": [
+        { "id": "a", "text": "<template #footer>…</template>" },
+        { "id": "b", "text": "<slot name=\"footer\">…</slot>" },
+        { "id": "c", "text": "<footer slot>…</footer>" },
+        { "id": "d", "text": "footer={…}" }
+      ],
+      "answer": "a",
+      "explanation": "The parent uses <template #footer> (shorthand for v-slot:footer), which fills the child's <slot name=\"footer\">."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Why can't ordinary slot content read the child's internal variables?",
+      "options": [
+        { "id": "a", "text": "Because slots are asynchronous" },
+        { "id": "b", "text": "Because slot content is compiled in the parent's scope, not the child's" },
+        { "id": "c", "text": "Because variables are private in JavaScript" },
+        { "id": "d", "text": "It actually can, always" }
+      ],
+      "answer": "b",
+      "explanation": "Slot content lives in the parent's scope. To expose child data, use a scoped slot: the child binds data on <slot :item=\"x\" /> and the parent receives it."
+    },
+    {
+      "id": "q5",
+      "type": "fill-blank",
+      "prompt": "A slot that passes data from the child to the slot content is called a ______ slot. (one word)",
+      "answer": ["scoped"],
+      "explanation": "Scoped slots expose slot props from the child, so the parent can render child-owned data (like each item in a list)."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "You want a reusable list component that iterates items internally but lets the parent decide how each row looks. What do you use?",
+      "options": [
+        { "id": "a", "text": "A prop for each row" },
+        { "id": "b", "text": "A scoped slot exposing each item" },
+        { "id": "c", "text": "provide/inject" },
+        { "id": "d", "text": "v-html" }
+      ],
+      "answer": "b",
+      "explanation": "A scoped slot lets the child own iteration while exposing each item to the parent, which supplies the row markup — the ideal pattern for flexible list/renderer components."
+    }
+  ]
+}

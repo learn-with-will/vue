@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-13",
+  "lessonId": "lesson-13",
+  "title": "Provide / Inject",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What problem do provide and inject solve?",
+      "options": [
+        { "id": "a", "text": "Styling components" },
+        { "id": "b", "text": "Prop drilling — passing data through many intermediate components that don't use it" },
+        { "id": "c", "text": "Routing between pages" },
+        { "id": "d", "text": "Server-side rendering" }
+      ],
+      "answer": "b",
+      "explanation": "provide/inject lets an ancestor share data directly with any descendant, avoiding the need to thread a prop through every layer in between."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "To share reactive state via provide, what should you provide?",
+      "options": [
+        { "id": "a", "text": "The ref's unwrapped value, e.g. count.value" },
+        { "id": "b", "text": "The ref (or reactive object) itself, e.g. count" },
+        { "id": "c", "text": "A copy made with JSON.stringify" },
+        { "id": "d", "text": "A string key only" }
+      ],
+      "answer": "b",
+      "explanation": "Provide the ref/reactive itself so injectors stay reactive. Providing count.value hands over a one-time snapshot that won't update."
+    },
+    {
+      "id": "q3",
+      "type": "single-choice",
+      "prompt": "What is the second argument to inject(key, default) used for?",
+      "options": [
+        { "id": "a", "text": "The component name" },
+        { "id": "b", "text": "A default value used if no ancestor provided that key" },
+        { "id": "c", "text": "A CSS class" },
+        { "id": "d", "text": "The provide function" }
+      ],
+      "answer": "b",
+      "explanation": "The optional second argument is a fallback value returned when the key wasn't provided anywhere up the tree."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "For type-safe injection in TypeScript, use an Injection______ (a typed Symbol) as the key. (one word)",
+      "answer": ["Key", "key"],
+      "explanation": "An InjectionKey<T> is a Symbol typed to carry the value's type, so provide/inject are type-checked."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "How can you let descendants read shared state but not directly mutate it?",
+      "options": [
+        { "id": "a", "text": "Provide it wrapped in readonly() and expose functions for controlled updates" },
+        { "id": "b", "text": "Provide a plain string" },
+        { "id": "c", "text": "You can't restrict it" },
+        { "id": "d", "text": "Use v-once" }
+      ],
+      "answer": "a",
+      "explanation": "Wrapping the state in readonly() before providing prevents descendants from reassigning it; provide separate functions to make controlled changes."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "When is a Pinia store a better fit than provide/inject?",
+      "options": [
+        { "id": "a", "text": "For a single value shared within one subtree" },
+        { "id": "b", "text": "For app-wide shared state used across many unrelated parts of the app" },
+        { "id": "c", "text": "Never — provide/inject is always better" },
+        { "id": "d", "text": "Only for CSS variables" }
+      ],
+      "answer": "b",
+      "explanation": "provide/inject shines for a subtree's context; app-wide state that many unrelated components share is usually cleaner in a Pinia store."
+    }
+  ]
+}
