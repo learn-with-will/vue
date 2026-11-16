@@ -1,0 +1,74 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations & Templates",
+    "blurb": "What Vue is, the progressive framework idea, createApp, and template syntax.",
+    "order": 1
+  },
+  {
+    "id": "reactivity",
+    "title": "Reactivity & Computed",
+    "blurb": "Reactive state with ref and reactive, auto-unwrapping, and computed caching.",
+    "order": 2
+  },
+  {
+    "id": "template-directives",
+    "title": "Directives & Render Control",
+    "blurb": "Conditional rendering with v-if and v-show, v-for list keys, and class and style bindings.",
+    "order": 3
+  },
+  {
+    "id": "events-forms",
+    "title": "Events & Form Inputs",
+    "blurb": "Listen to user events with v-on, event modifiers, and two-way binding with v-model.",
+    "order": 4
+  },
+  {
+    "id": "lifecycle-watchers",
+    "title": "Lifecycle & Watchers",
+    "blurb": "Hook into component lifecycle phases and watch state with watch and watchEffect.",
+    "order": 5
+  },
+  {
+    "id": "components",
+    "title": "Components & Props",
+    "blurb": "Single-file components with script setup, prop declarations, typing, and one-way flow.",
+    "order": 6
+  },
+  {
+    "id": "events-vmodel",
+    "title": "Emits & Two-Way Binding",
+    "blurb": "Emit custom component events and create two-way component bindings with defineModel.",
+    "order": 7
+  },
+  {
+    "id": "slots-provide",
+    "title": "Slots & Dependency Injection",
+    "blurb": "Distribute content with default, named, and scoped slots, and provide/inject deep dependencies.",
+    "order": 8
+  },
+  {
+    "id": "composables",
+    "title": "Composables",
+    "blurb": "Extract and reuse stateful component logic with Composition API functions.",
+    "order": 9
+  },
+  {
+    "id": "routing-state",
+    "title": "Routing & Pinia",
+    "blurb": "Client-side routing with Vue Router, route guards, and global state with Pinia.",
+    "order": 10
+  },
+  {
+    "id": "advanced-reactivity",
+    "title": "Reactivity in Depth & Built-in Components",
+    "blurb": "DOM refs, nextTick, shallow reactivity, Teleport modals, Suspense, and CSS transitions.",
+    "order": 11
+  },
+  {
+    "id": "tooling-typescript",
+    "title": "Tooling, TypeScript & Testing",
+    "blurb": "Async components, custom directives, plugins, TypeScript with vue-tsc, and Vitest testing.",
+    "order": 12
+  }
+]

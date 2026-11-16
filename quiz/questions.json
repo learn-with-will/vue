@@ -1,0 +1,3788 @@
+[
+  {
+    "id": "foundations-01",
+    "topic": "foundations",
+    "lesson": "what-is-vue",
+    "type": "single-choice",
+    "prompt": "What does it mean that Vue is a \"progressive framework\"?",
+    "explanation": "Vue is progressive: you can drop it into a page for a single interactive widget, or scale up to a full single-page application with a build tool — adopting only what you need.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It only works with the newest browsers"
+      },
+      {
+        "id": "b",
+        "text": "You can adopt it incrementally — from one widget via a CDN up to a full build-tool app"
+      },
+      {
+        "id": "c",
+        "text": "It automatically upgrades your code to new versions"
+      },
+      {
+        "id": "d",
+        "text": "It must always be used with a backend server"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "foundations-02",
+    "topic": "foundations",
+    "lesson": "progressive-framework",
+    "type": "single-choice",
+    "prompt": "Which style does this course use for writing component logic?",
+    "explanation": "Both the Options API and the Composition API are fully supported, but this course uses the Composition API with <script setup>, the recommended default for new projects.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The Options API"
+      },
+      {
+        "id": "b",
+        "text": "The Composition API with <script setup>"
+      },
+      {
+        "id": "c",
+        "text": "Plain jQuery"
+      },
+      {
+        "id": "d",
+        "text": "Server-side templates only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "foundations-03",
+    "topic": "foundations",
+    "lesson": "options-vs-composition-api",
+    "type": "multiple-choice",
+    "prompt": "Which of these are blocks in a single-file component (.vue file)? Select all that apply.",
+    "explanation": "An SFC bundles <template> (HTML), <script>/<script setup> (logic), and <style> (CSS). There is no <database> block.",
+    "options": [
+      {
+        "id": "a",
+        "text": "<template>"
+      },
+      {
+        "id": "b",
+        "text": "<script> / <script setup>"
+      },
+      {
+        "id": "c",
+        "text": "<style>"
+      },
+      {
+        "id": "d",
+        "text": "<database>"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "foundations-04",
+    "topic": "foundations",
+    "lesson": "anatomy-of-an-sfc",
+    "type": "fill-blank",
+    "prompt": "Vue automatically tracks which data the UI depends on and updates the DOM when it changes. This system is called ______. (one word)",
+    "explanation": "Reactivity is the system that tracks data usage and re-renders the affected part of the UI when the data changes.",
+    "answer": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "foundations-05",
+    "topic": "foundations",
+    "lesson": "anatomy-of-an-sfc",
+    "type": "single-choice",
+    "prompt": "Why can't a .vue single-file component run directly in the browser without tooling?",
+    "explanation": "The .vue SFC format is compiled by a build tool (Vite) into standard JavaScript and CSS. The CDN build instead uses plain JavaScript component objects, which need no compilation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Browsers block .vue files for security reasons"
+      },
+      {
+        "id": "b",
+        "text": "SFCs must be compiled by a build tool like Vite into JavaScript the browser can run"
+      },
+      {
+        "id": "c",
+        "text": "SFCs only work on the server"
+      },
+      {
+        "id": "d",
+        "text": "They actually do run directly in every browser"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "foundations-06",
+    "topic": "foundations",
+    "lesson": "what-is-vue",
+    "type": "match-pair",
+    "prompt": "Match each term to its description.",
+    "explanation": "Declarative rendering is the core idea; the Composition and Options APIs are the two logic styles; an SFC is the .vue file format that holds all three blocks.",
+    "pairs": [
+      {
+        "left": "Declarative rendering",
+        "right": "Describe the UI for a state; Vue updates the DOM"
+      },
+      {
+        "left": "Composition API",
+        "right": "Logic built from functions like ref and computed"
+      },
+      {
+        "left": "Options API",
+        "right": "Logic grouped into data/methods/computed options"
+      },
+      {
+        "left": "SFC",
+        "right": "A .vue file with template, script, and style"
+      }
+    ]
+  },
+  {
+    "id": "foundations-07",
+    "topic": "foundations",
+    "lesson": "create-app-and-mount",
+    "type": "single-choice",
+    "prompt": "What does createApp(App).mount('#app') do?",
+    "explanation": "createApp builds an application instance from the root component, and .mount('#app') attaches and renders it onto the matching DOM element.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Downloads Vue from a CDN"
+      },
+      {
+        "id": "b",
+        "text": "Creates an app from the root component and renders it into the #app element"
+      },
+      {
+        "id": "c",
+        "text": "Deletes the #app element"
+      },
+      {
+        "id": "d",
+        "text": "Starts a backend server"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "foundations-08",
+    "topic": "foundations",
+    "lesson": "attribute-bindings",
+    "type": "single-choice",
+    "prompt": "Which is the correct way to bind an element's href to a `url` variable?",
+    "explanation": "Mustaches don't work in attributes. Use v-bind, whose shorthand is a colon: :href=\"url\".",
+    "options": [
+      {
+        "id": "a",
+        "text": "<a href=\"{{ url }}\">"
+      },
+      {
+        "id": "b",
+        "text": "<a :href=\"url\">"
+      },
+      {
+        "id": "c",
+        "text": "<a href=url>"
+      },
+      {
+        "id": "d",
+        "text": "<a bind-href=\"url\">"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "foundations-09",
+    "topic": "foundations",
+    "lesson": "text-interpolation",
+    "type": "single-choice",
+    "prompt": "When should you avoid v-html?",
+    "explanation": "v-html renders a raw HTML string, so untrusted content can inject scripts (cross-site scripting). Use it only with trusted, sanitized HTML.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Whenever the HTML comes from users or untrusted sources (XSS risk)"
+      },
+      {
+        "id": "b",
+        "text": "Only when the page is in dark mode"
+      },
+      {
+        "id": "c",
+        "text": "Never — it is always safe"
+      },
+      {
+        "id": "d",
+        "text": "Only on the server"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "foundations-10",
+    "topic": "foundations",
+    "lesson": "directives-overview",
+    "type": "fill-blank",
+    "prompt": "A template attribute that starts with `v-` and applies reactive behavior is called a ______. (one word)",
+    "explanation": "Directives (v-bind, v-on, v-if, v-for, v-model, …) are special v-prefixed attributes that apply reactive behavior to the DOM.",
+    "answer": [
+      "directive"
+    ]
+  },
+  {
+    "id": "foundations-11",
+    "topic": "foundations",
+    "lesson": "attribute-bindings",
+    "type": "multiple-choice",
+    "prompt": "Which statements about template bindings are true? Select all that apply.",
+    "explanation": "Interpolation renders text, @ is the v-on shorthand, and null/undefined removes a bound attribute. Bindings accept a single expression, not a statement like an if.",
+    "options": [
+      {
+        "id": "a",
+        "text": "{{ }} inserts a value as plain text"
+      },
+      {
+        "id": "b",
+        "text": "@click is the shorthand for v-on:click"
+      },
+      {
+        "id": "c",
+        "text": "A binding can contain a full if-statement"
+      },
+      {
+        "id": "d",
+        "text": "Binding a value of null or undefined removes the attribute"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "foundations-12",
+    "topic": "foundations",
+    "lesson": "directives-overview",
+    "type": "match-pair",
+    "prompt": "In `v-on:click.prevent=\"onSubmit\"`, match each part to what it is.",
+    "explanation": "A directive has a name (v-on), an optional argument after the colon (click), optional modifiers after dots (prevent), and a value expression (onSubmit).",
+    "pairs": [
+      {
+        "left": "v-on",
+        "right": "Directive name"
+      },
+      {
+        "left": "click",
+        "right": "Argument"
+      },
+      {
+        "left": "prevent",
+        "right": "Modifier"
+      },
+      {
+        "left": "onSubmit",
+        "right": "Value (the expression)"
+      }
+    ]
+  },
+  {
+    "id": "reactivity-01",
+    "topic": "reactivity",
+    "lesson": "ref-primitive",
+    "type": "single-choice",
+    "prompt": "How do you read the current value of `const count = ref(0)` inside a <script> block?",
+    "explanation": "In JavaScript you access a ref's inner value through .value (count.value). In templates, top-level refs are auto-unwrapped so you write count.",
+    "options": [
+      {
+        "id": "a",
+        "text": "count"
+      },
+      {
+        "id": "b",
+        "text": "count.value"
+      },
+      {
+        "id": "c",
+        "text": "count()"
+      },
+      {
+        "id": "d",
+        "text": "count.get()"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-02",
+    "topic": "reactivity",
+    "lesson": "template-auto-unwrapping",
+    "type": "single-choice",
+    "prompt": "In a template, how do you display `const count = ref(0)`?",
+    "explanation": "Templates automatically unwrap top-level refs, so {{ count }} shows the value — no .value needed.",
+    "options": [
+      {
+        "id": "a",
+        "text": "{{ count.value }}"
+      },
+      {
+        "id": "b",
+        "text": "{{ count }}"
+      },
+      {
+        "id": "c",
+        "text": "{{ ref(count) }}"
+      },
+      {
+        "id": "d",
+        "text": "{{ count() }}"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-03",
+    "topic": "reactivity",
+    "lesson": "reactive-objects",
+    "type": "multiple-choice",
+    "prompt": "Which statements about reactive() are true? Select all that apply.",
+    "explanation": "reactive works only on collection types, is deep, but breaks if you reassign the whole object. Destructuring its properties DISCONNECTS them from reactivity.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It only works on objects, arrays, Map, and Set"
+      },
+      {
+        "id": "b",
+        "text": "Destructuring its properties keeps them reactive"
+      },
+      {
+        "id": "c",
+        "text": "Reassigning the whole object breaks reactivity"
+      },
+      {
+        "id": "d",
+        "text": "It provides deep reactivity for nested properties"
+      }
+    ],
+    "answer": [
+      "a",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": "reactivity-04",
+    "topic": "reactivity",
+    "lesson": "ref-primitive",
+    "type": "fill-blank",
+    "prompt": "To make a single number reactive, you should use ______(0) rather than reactive(0). (name the function)",
+    "explanation": "reactive only works on objects, so a primitive number must use ref(0).",
+    "answer": [
+      "ref"
+    ]
+  },
+  {
+    "id": "reactivity-05",
+    "topic": "reactivity",
+    "lesson": "ref-primitive",
+    "type": "single-choice",
+    "prompt": "Why does a ref use a .value wrapper instead of just being a plain variable?",
+    "explanation": "JavaScript can't detect access to a plain variable. Wrapping the value in an object lets Vue define a getter/setter on .value and observe every read and write.",
+    "options": [
+      {
+        "id": "a",
+        "text": "To make the code longer on purpose"
+      },
+      {
+        "id": "b",
+        "text": "So Vue can intercept reads and writes of .value to track and trigger reactive updates"
+      },
+      {
+        "id": "c",
+        "text": "Because JavaScript requires all variables to have a .value"
+      },
+      {
+        "id": "d",
+        "text": "To store the value on a server"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-06",
+    "topic": "reactivity",
+    "lesson": "ref-vs-reactive",
+    "type": "single-choice",
+    "prompt": "Which is the recommended default for reactive state, and why?",
+    "explanation": "ref is the recommended default: it works for primitives and objects, can be reassigned through .value, and doesn't lose reactivity when destructured or passed around.",
+    "options": [
+      {
+        "id": "a",
+        "text": "reactive, because it never needs .value"
+      },
+      {
+        "id": "b",
+        "text": "ref, because it holds any type, can be reassigned via .value, and survives being passed around"
+      },
+      {
+        "id": "c",
+        "text": "Plain variables, because they are simplest"
+      },
+      {
+        "id": "d",
+        "text": "It doesn't matter; they behave identically"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-07",
+    "topic": "reactivity",
+    "lesson": "computed-basics",
+    "type": "single-choice",
+    "prompt": "What is the key advantage of a computed property over a method for derived values?",
+    "explanation": "A computed caches its result based on its dependencies and re-runs only when one of them changes; a method runs every time it is called.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It runs on the server"
+      },
+      {
+        "id": "b",
+        "text": "It is cached and only re-evaluates when a reactive dependency changes"
+      },
+      {
+        "id": "c",
+        "text": "It can perform side effects safely"
+      },
+      {
+        "id": "d",
+        "text": "It never needs to be read"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-08",
+    "topic": "reactivity",
+    "lesson": "computed-caching",
+    "type": "single-choice",
+    "prompt": "When does a computed property re-run its getter?",
+    "explanation": "Vue tracks which reactive values the getter reads and re-evaluates only when one of those dependencies changes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "On every render, always"
+      },
+      {
+        "id": "b",
+        "text": "Only when one of its reactive dependencies changes"
+      },
+      {
+        "id": "c",
+        "text": "Once, and never again"
+      },
+      {
+        "id": "d",
+        "text": "Every 100 milliseconds"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-09",
+    "topic": "reactivity",
+    "lesson": "computed-caching",
+    "type": "single-choice",
+    "prompt": "How do you make a computed property writable?",
+    "explanation": "computed({ get, set }) creates a writable computed; assigning to its .value calls the setter.",
+    "options": [
+      {
+        "id": "a",
+        "text": "You can't — computed is always read-only"
+      },
+      {
+        "id": "b",
+        "text": "Pass computed() an object with get and set functions"
+      },
+      {
+        "id": "c",
+        "text": "Add a second argument true"
+      },
+      {
+        "id": "d",
+        "text": "Wrap it in reactive()"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "reactivity-10",
+    "topic": "reactivity",
+    "lesson": "computed-basics",
+    "type": "fill-blank",
+    "prompt": "A computed getter should be free of ______ effects — it should only derive and return a value. (one word)",
+    "explanation": "Computed getters must be side-effect-free; mutating other state or fetching data belongs in a watcher, not a getter.",
+    "answer": [
+      "side"
+    ]
+  },
+  {
+    "id": "reactivity-11",
+    "topic": "reactivity",
+    "lesson": "writable-computed",
+    "type": "multiple-choice",
+    "prompt": "Which are good reasons to use a computed property? Select all that apply.",
+    "explanation": "Computed properties name and cache derived values from reactive state. They must not perform side effects like fetching data.",
+    "options": [
+      {
+        "id": "a",
+        "text": "To keep the template clean by naming a derived value"
+      },
+      {
+        "id": "b",
+        "text": "To cache an expensive calculation over reactive data"
+      },
+      {
+        "id": "c",
+        "text": "To run a fetch request each time it's read"
+      },
+      {
+        "id": "d",
+        "text": "To derive a value from other reactive state"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "reactivity-12",
+    "topic": "reactivity",
+    "lesson": "computed-basics",
+    "type": "single-choice",
+    "prompt": "You call a computed property's value 10 times without changing its dependencies. How many times does the getter actually run?",
+    "explanation": "The getter runs once and the cached result is reused until a dependency changes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "10 times"
+      },
+      {
+        "id": "b",
+        "text": "Once (the result is cached)"
+      },
+      {
+        "id": "c",
+        "text": "Zero times"
+      },
+      {
+        "id": "d",
+        "text": "It depends on the browser"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-01",
+    "topic": "template-directives",
+    "lesson": "v-if-conditional",
+    "type": "single-choice",
+    "prompt": "What is the main difference between v-if and v-show?",
+    "explanation": "v-if truly creates or destroys the element and is lazy; v-show keeps the element in the DOM and just toggles display, making it cheaper to flip frequently.",
+    "options": [
+      {
+        "id": "a",
+        "text": "v-if toggles CSS display; v-show adds/removes the element"
+      },
+      {
+        "id": "b",
+        "text": "v-if adds/removes the element (and is lazy); v-show only toggles the CSS display property"
+      },
+      {
+        "id": "c",
+        "text": "They are identical"
+      },
+      {
+        "id": "d",
+        "text": "v-show only works on the server"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-02",
+    "topic": "template-directives",
+    "lesson": "v-show-toggling",
+    "type": "single-choice",
+    "prompt": "Why should each v-for item have a stable, unique :key?",
+    "explanation": "The key is a stable identity for each item, letting Vue track items across changes and reuse DOM nodes instead of rebuilding them — preventing subtle state bugs.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It's required syntax or the loop won't run"
+      },
+      {
+        "id": "b",
+        "text": "So Vue can match items across updates and reuse/reorder DOM nodes correctly"
+      },
+      {
+        "id": "c",
+        "text": "To sort the list automatically"
+      },
+      {
+        "id": "d",
+        "text": "To make the list read-only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-03",
+    "topic": "template-directives",
+    "lesson": "v-if-vs-v-show",
+    "type": "single-choice",
+    "prompt": "In Vue 3, what happens if you put v-if and v-for on the same element?",
+    "explanation": "In Vue 3, v-if takes priority over v-for on the same element, so the loop variable isn't available to the condition. Filter with a computed property instead.",
+    "options": [
+      {
+        "id": "a",
+        "text": "v-for runs first, so v-if can filter each item"
+      },
+      {
+        "id": "b",
+        "text": "v-if has higher priority and runs first, so it can't access the loop variable"
+      },
+      {
+        "id": "c",
+        "text": "Vue renders the list twice"
+      },
+      {
+        "id": "d",
+        "text": "It is the recommended pattern"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-04",
+    "topic": "template-directives",
+    "lesson": "v-for-key",
+    "type": "fill-blank",
+    "prompt": "To filter a list before rendering it, do the filtering in a ______ property and loop over the result. (one word)",
+    "explanation": "Filtering and sorting belong in a computed property; then v-for iterates over the derived list — avoiding the v-if/v-for pitfall.",
+    "answer": [
+      "computed"
+    ]
+  },
+  {
+    "id": "template-directives-05",
+    "topic": "template-directives",
+    "lesson": "avoid-v-if-with-v-for",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "v-else must be adjacent; index-as-key breaks on reorder; and <template> groups elements without a real DOM node. v-show does NOT remove the element — it sets display: none.",
+    "options": [
+      {
+        "id": "a",
+        "text": "v-else must immediately follow a v-if (or v-else-if) element"
+      },
+      {
+        "id": "b",
+        "text": "Using the array index as key is risky for lists that reorder"
+      },
+      {
+        "id": "c",
+        "text": "v-show removes the element from the DOM when false"
+      },
+      {
+        "id": "d",
+        "text": "You can put v-if or v-for on a <template> to group elements without an extra wrapper"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "template-directives-06",
+    "topic": "template-directives",
+    "lesson": "v-for-lists",
+    "type": "ordering",
+    "prompt": "Order these from cheapest to most expensive to TOGGLE repeatedly (visibility on/off many times).",
+    "explanation": "v-show only flips a CSS property, so it's cheap to toggle repeatedly. v-if creates and destroys the element (and its components/listeners) each time, which costs more per toggle.",
+    "items": [
+      {
+        "id": "show",
+        "text": "v-show (toggle CSS display)"
+      },
+      {
+        "id": "if",
+        "text": "v-if (create/destroy the element each time)"
+      }
+    ],
+    "answer": [
+      "show",
+      "if"
+    ]
+  },
+  {
+    "id": "template-directives-07",
+    "topic": "template-directives",
+    "lesson": "class-binding-object",
+    "type": "single-choice",
+    "prompt": "What does :class=\"{ active: isActive }\" do?",
+    "explanation": "In the object syntax, each key is a class name toggled by the truthiness of its value — 'active' applies when isActive is truthy.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Always applies the 'active' class"
+      },
+      {
+        "id": "b",
+        "text": "Applies the 'active' class only when isActive is truthy"
+      },
+      {
+        "id": "c",
+        "text": "Renames the element to 'active'"
+      },
+      {
+        "id": "d",
+        "text": "Removes all other classes"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-08",
+    "topic": "template-directives",
+    "lesson": "class-binding-array",
+    "type": "single-choice",
+    "prompt": "If an element has both class=\"card\" and :class=\"{ selected: isSelected }\", what happens?",
+    "explanation": "Static class and dynamic :class merge, so 'card' is always present and 'selected' is added conditionally.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The dynamic class replaces the static one"
+      },
+      {
+        "id": "b",
+        "text": "They merge — 'card' is always applied, 'selected' when isSelected is truthy"
+      },
+      {
+        "id": "c",
+        "text": "Only the static class is used"
+      },
+      {
+        "id": "d",
+        "text": "Vue throws an error"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-09",
+    "topic": "template-directives",
+    "lesson": "style-binding-object",
+    "type": "single-choice",
+    "prompt": "Which is a correct :style binding for a dynamic pixel font size?",
+    "explanation": "Style values are expressions, so you must include the unit: size + 'px'. Property names use camelCase (fontSize) or quoted kebab-case.",
+    "options": [
+      {
+        "id": "a",
+        "text": ":style=\"{ fontSize: size }\""
+      },
+      {
+        "id": "b",
+        "text": ":style=\"{ fontSize: size + 'px' }\""
+      },
+      {
+        "id": "c",
+        "text": ":style=\"fontSize: size px\""
+      },
+      {
+        "id": "d",
+        "text": ":style=\"size px\""
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "template-directives-10",
+    "topic": "template-directives",
+    "lesson": "class-binding-object",
+    "type": "fill-blank",
+    "prompt": "Vue automatically adds vendor ______ to CSS properties that need them, so you write the standard property name. (one word)",
+    "explanation": "Vue auto-prefixes styles requiring vendor prefixes at runtime, so you don't have to write them manually.",
+    "answer": [
+      "prefixes"
+    ]
+  },
+  {
+    "id": "template-directives-11",
+    "topic": "template-directives",
+    "lesson": "style-binding-object",
+    "type": "multiple-choice",
+    "prompt": "Which are valid ways to use :class? Select all that apply.",
+    "explanation": "class binding supports object syntax, array syntax, and objects nested in arrays. A bare number is not a meaningful class binding.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Object syntax: :class=\"{ active: isActive }\""
+      },
+      {
+        "id": "b",
+        "text": "Array syntax: :class=\"[base, theme]\""
+      },
+      {
+        "id": "c",
+        "text": "An object nested inside an array: :class=\"[base, { active: isActive }]\""
+      },
+      {
+        "id": "d",
+        "text": "A number: :class=\"42\""
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "template-directives-12",
+    "topic": "template-directives",
+    "lesson": "style-binding-array",
+    "type": "single-choice",
+    "prompt": "When should you prefer toggling a CSS class (:class) over inline :style?",
+    "explanation": "Prefer :class for reusable/themable styles. Use :style for values computed from state, like a width percentage or a dynamic color.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Never — inline styles are always better"
+      },
+      {
+        "id": "b",
+        "text": "For reusable or themable styling; reserve :style for values genuinely derived from state"
+      },
+      {
+        "id": "c",
+        "text": "Only on the server"
+      },
+      {
+        "id": "d",
+        "text": "Only for text color"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-forms-01",
+    "topic": "events-forms",
+    "lesson": "v-on-listening",
+    "type": "single-choice",
+    "prompt": "What does @submit.prevent=\"save\" do on a form?",
+    "explanation": "The .prevent modifier calls event.preventDefault() for you, so the browser doesn't reload the page, and then your save handler runs.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prevents the form from ever submitting"
+      },
+      {
+        "id": "b",
+        "text": "Calls event.preventDefault() and then runs save, stopping the default page reload"
+      },
+      {
+        "id": "c",
+        "text": "Saves the form to localStorage"
+      },
+      {
+        "id": "d",
+        "text": "Disables the submit button"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-forms-02",
+    "topic": "events-forms",
+    "lesson": "event-modifiers",
+    "type": "single-choice",
+    "prompt": "What is the difference between @click=\"save\" and @click=\"save()\"?",
+    "explanation": "@click=\"save\" passes the function reference; @click=\"save()\" invokes save during render (and uses its return value), which is usually a mistake unless you intend to pass arguments.",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no difference"
+      },
+      {
+        "id": "b",
+        "text": "@click=\"save\" uses the function as the handler; @click=\"save()\" calls it immediately at render"
+      },
+      {
+        "id": "c",
+        "text": "@click=\"save()\" is required for all handlers"
+      },
+      {
+        "id": "d",
+        "text": "@click=\"save\" runs on the server"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-forms-03",
+    "topic": "events-forms",
+    "lesson": "key-modifiers",
+    "type": "single-choice",
+    "prompt": "To collect several checkboxes into one value, what should you bind them to with v-model?",
+    "explanation": "Bind multiple checkboxes to the same array with v-model; each checked box's value is added to the array. A single checkbox bound to a boolean is for on/off.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A boolean"
+      },
+      {
+        "id": "b",
+        "text": "The same array"
+      },
+      {
+        "id": "c",
+        "text": "A separate ref for each"
+      },
+      {
+        "id": "d",
+        "text": "A number"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-forms-04",
+    "topic": "events-forms",
+    "lesson": "v-model-basics",
+    "type": "fill-blank",
+    "prompt": "The v-model modifier that trims leading and trailing whitespace is .______ (one word).",
+    "explanation": "v-model.trim removes surrounding whitespace from the bound value; .number casts to a number and .lazy syncs on change.",
+    "answer": [
+      "trim"
+    ]
+  },
+  {
+    "id": "events-forms-05",
+    "topic": "events-forms",
+    "lesson": "v-model-inputs",
+    "type": "single-choice",
+    "prompt": "v-model on a text input is essentially shorthand for what?",
+    "explanation": "For a text input, v-model binds :value to the state and listens for the input event to write changes back — two-way binding.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Binding :value and updating state on the input event"
+      },
+      {
+        "id": "b",
+        "text": "A computed property"
+      },
+      {
+        "id": "c",
+        "text": "A watcher"
+      },
+      {
+        "id": "d",
+        "text": "A v-for loop"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "events-forms-06",
+    "topic": "events-forms",
+    "lesson": "v-model-modifiers",
+    "type": "multiple-choice",
+    "prompt": "Which are valid event modifiers in Vue? Select all that apply.",
+    "explanation": ".prevent, .stop, and key modifiers like .enter are real. There is no .reload modifier.",
+    "options": [
+      {
+        "id": "a",
+        "text": ".prevent"
+      },
+      {
+        "id": "b",
+        "text": ".stop"
+      },
+      {
+        "id": "c",
+        "text": ".enter (key modifier)"
+      },
+      {
+        "id": "d",
+        "text": ".reload"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "lifecycle-watchers-01",
+    "topic": "lifecycle-watchers",
+    "lesson": "lifecycle-hooks",
+    "type": "single-choice",
+    "prompt": "Which lifecycle hook runs once the component's DOM exists, making it the right place for initial data fetching or DOM access?",
+    "explanation": "onMounted runs after the component is inserted into the DOM, so template refs are available and it's a natural place to fetch initial data.",
+    "options": [
+      {
+        "id": "a",
+        "text": "onBeforeMount"
+      },
+      {
+        "id": "b",
+        "text": "onMounted"
+      },
+      {
+        "id": "c",
+        "text": "onUnmounted"
+      },
+      {
+        "id": "d",
+        "text": "onUpdated"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "lifecycle-watchers-02",
+    "topic": "lifecycle-watchers",
+    "lesson": "on-mounted",
+    "type": "single-choice",
+    "prompt": "How does watchEffect differ from watch?",
+    "explanation": "watchEffect runs its function right away and re-runs when any reactive value it read changes. watch is lazy, takes explicit sources, and provides old and new values.",
+    "options": [
+      {
+        "id": "a",
+        "text": "watchEffect runs only on the server"
+      },
+      {
+        "id": "b",
+        "text": "watchEffect runs immediately and auto-tracks reactive state it reads; watch is lazy with explicit sources"
+      },
+      {
+        "id": "c",
+        "text": "watchEffect cannot access reactive state"
+      },
+      {
+        "id": "d",
+        "text": "They are identical"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "lifecycle-watchers-03",
+    "topic": "lifecycle-watchers",
+    "lesson": "on-unmounted",
+    "type": "single-choice",
+    "prompt": "Where should you clean up a timer or event listener that you set up in onMounted?",
+    "explanation": "Pair setup with cleanup: tear down timers, listeners, and subscriptions in onUnmounted so they don't leak after the component is removed.",
+    "options": [
+      {
+        "id": "a",
+        "text": "In a computed property"
+      },
+      {
+        "id": "b",
+        "text": "In onUnmounted"
+      },
+      {
+        "id": "c",
+        "text": "You don't need to clean it up"
+      },
+      {
+        "id": "d",
+        "text": "In onMounted again"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "lifecycle-watchers-04",
+    "topic": "lifecycle-watchers",
+    "lesson": "watch-source",
+    "type": "fill-blank",
+    "prompt": "By default, a watcher callback runs BEFORE the DOM updates. To run it AFTER the DOM updates, set flush to '______'. (one word)",
+    "explanation": "The default flush is 'pre' (before DOM update). Use flush: 'post' when the callback needs to read the updated DOM.",
+    "answer": [
+      "post"
+    ]
+  },
+  {
+    "id": "lifecycle-watchers-05",
+    "topic": "lifecycle-watchers",
+    "lesson": "watch-effect",
+    "type": "single-choice",
+    "prompt": "Why must lifecycle hooks be called synchronously inside setup (not inside an if or after await)?",
+    "explanation": "Hooks register callbacks against the active component instance during setup. Calling them conditionally or after an await can break that association.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For performance only"
+      },
+      {
+        "id": "b",
+        "text": "So Vue can associate them with the current component instance; otherwise they may fail to register"
+      },
+      {
+        "id": "c",
+        "text": "Because hooks are asynchronous"
+      },
+      {
+        "id": "d",
+        "text": "There is no such requirement"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "lifecycle-watchers-06",
+    "topic": "lifecycle-watchers",
+    "lesson": "watch-flush-timing",
+    "type": "match-pair",
+    "prompt": "Match each tool to its typical job.",
+    "explanation": "onMounted/onUnmounted bracket setup and cleanup; watch reacts to an explicit source; watchEffect auto-tracks whatever it reads.",
+    "pairs": [
+      {
+        "left": "onMounted",
+        "right": "Fetch data / access the DOM after mount"
+      },
+      {
+        "left": "onUnmounted",
+        "right": "Clean up timers and listeners"
+      },
+      {
+        "left": "watch",
+        "right": "React to a specific source with old + new values"
+      },
+      {
+        "left": "watchEffect",
+        "right": "Keep something in sync with the state it reads"
+      }
+    ]
+  },
+  {
+    "id": "components-01",
+    "topic": "components",
+    "lesson": "defining-components",
+    "type": "single-choice",
+    "prompt": "In a <script setup> SFC, what do you need to do to use a child component in the template?",
+    "explanation": "With <script setup>, importing a component registers it locally, so you can use its tag directly without a components: option.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Register it in a components: option"
+      },
+      {
+        "id": "b",
+        "text": "Import it in <script setup> — that's enough"
+      },
+      {
+        "id": "c",
+        "text": "Call app.component() globally"
+      },
+      {
+        "id": "d",
+        "text": "Nothing; all components are global"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-02",
+    "topic": "components",
+    "lesson": "importing-components",
+    "type": "single-choice",
+    "prompt": "What does <script setup> expose to the template?",
+    "explanation": "All top-level bindings declared in <script setup> are automatically available to the template; there is no return statement.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only refs"
+      },
+      {
+        "id": "b",
+        "text": "Every top-level binding (refs, functions, computeds, imported components), with no return statement"
+      },
+      {
+        "id": "c",
+        "text": "Nothing — you must return values"
+      },
+      {
+        "id": "d",
+        "text": "Only functions named render"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-03",
+    "topic": "components",
+    "lesson": "component-naming",
+    "type": "single-choice",
+    "prompt": "Does a Vue 3 component template require a single root element?",
+    "explanation": "Vue 3 allows multiple root elements in a template, so a single wrapper element is optional.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, always"
+      },
+      {
+        "id": "b",
+        "text": "No — Vue 3 supports multiple root nodes (fragments)"
+      },
+      {
+        "id": "c",
+        "text": "Only in the Options API"
+      },
+      {
+        "id": "d",
+        "text": "Only if it has styles"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-04",
+    "topic": "components",
+    "lesson": "scoped-styles",
+    "type": "fill-blank",
+    "prompt": "By convention, Vue component names are written in ______Case (e.g. UserCard). (one word, the case name)",
+    "explanation": "Components are named in PascalCase, matching the imported name and typically the file name.",
+    "answer": [
+      "Pascal",
+      "pascal"
+    ]
+  },
+  {
+    "id": "components-05",
+    "topic": "components",
+    "lesson": "defining-components",
+    "type": "multiple-choice",
+    "prompt": "Which statements about components are true? Select all that apply.",
+    "explanation": "Components are reusable, each instance is independent, and apps are trees of them. In <script setup>, a child MUST be imported to be used.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each use of a component is an independent instance with its own state"
+      },
+      {
+        "id": "b",
+        "text": "Components let you reuse UI and logic"
+      },
+      {
+        "id": "c",
+        "text": "A child component works in <script setup> without being imported"
+      },
+      {
+        "id": "d",
+        "text": "Apps are typically built as a tree of components"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "components-06",
+    "topic": "components",
+    "lesson": "scoped-styles",
+    "type": "single-choice",
+    "prompt": "How does a parent pass data down to a child component?",
+    "explanation": "Parents pass data to children via props — custom attributes on the component tag (covered in depth in the next lesson).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Through props (attributes on the component tag)"
+      },
+      {
+        "id": "b",
+        "text": "By modifying the child's internal state directly"
+      },
+      {
+        "id": "c",
+        "text": "Through the URL only"
+      },
+      {
+        "id": "d",
+        "text": "It cannot pass data down"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "components-07",
+    "topic": "components",
+    "lesson": "define-props",
+    "type": "single-choice",
+    "prompt": "Is defineProps imported from 'vue'?",
+    "explanation": "defineProps (like defineEmits and defineModel) is a compile-time macro handled by the SFC compiler — you use it without importing it.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, always import it"
+      },
+      {
+        "id": "b",
+        "text": "No — it's a compile-time macro available in <script setup>"
+      },
+      {
+        "id": "c",
+        "text": "Only in JavaScript, not TypeScript"
+      },
+      {
+        "id": "d",
+        "text": "It's imported from 'vue-router'"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-08",
+    "topic": "components",
+    "lesson": "typing-props",
+    "type": "single-choice",
+    "prompt": "How do you give type-based props default values?",
+    "explanation": "The withDefaults helper adds default values to type-based props: withDefaults(defineProps<T>(), { size: 'md' }).",
+    "options": [
+      {
+        "id": "a",
+        "text": "You can't have defaults with the type-based form"
+      },
+      {
+        "id": "b",
+        "text": "Wrap defineProps in withDefaults(defineProps<T>(), { ... })"
+      },
+      {
+        "id": "c",
+        "text": "Add = value inside the type"
+      },
+      {
+        "id": "d",
+        "text": "Use reactive() around the props"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-09",
+    "topic": "components",
+    "lesson": "one-way-data-flow",
+    "type": "single-choice",
+    "prompt": "Can a child component change the value of a prop it receives?",
+    "explanation": "Props follow one-way data flow and are read-only in the child. To change parent-owned data, emit an event; for an editable value, copy the prop into local state.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, props are two-way"
+      },
+      {
+        "id": "b",
+        "text": "No — props are read-only; emit an event or copy to local state to change data"
+      },
+      {
+        "id": "c",
+        "text": "Only if the prop is a number"
+      },
+      {
+        "id": "d",
+        "text": "Only in the Options API"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-10",
+    "topic": "components",
+    "lesson": "prop-validation",
+    "type": "single-choice",
+    "prompt": "What is the difference between likes=\"42\" and :likes=\"42\" on a component?",
+    "explanation": "A plain attribute passes a literal string; v-bind (:) evaluates the expression, so :likes=\"42\" passes the number 42.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nothing"
+      },
+      {
+        "id": "b",
+        "text": "likes=\"42\" passes the string \"42\"; :likes=\"42\" binds the expression, passing the number 42"
+      },
+      {
+        "id": "c",
+        "text": ":likes=\"42\" passes a string"
+      },
+      {
+        "id": "d",
+        "text": "Both pass a number"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "components-11",
+    "topic": "components",
+    "lesson": "passing-props",
+    "type": "fill-blank",
+    "prompt": "Props flow in ______ direction(s) — parent to child — and are read-only in the child. (a number word)",
+    "explanation": "This is one-way data flow: data flows one direction, down from parent to child, and props are read-only.",
+    "answer": [
+      "one",
+      "1"
+    ]
+  },
+  {
+    "id": "components-12",
+    "topic": "components",
+    "lesson": "one-way-data-flow",
+    "type": "single-choice",
+    "prompt": "A child needs an editable value seeded from a prop. What's the correct approach?",
+    "explanation": "Since props are read-only, copy the prop into a local ref for the child to edit (and use a watcher if it must re-sync when the prop changes).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mutate the prop directly"
+      },
+      {
+        "id": "b",
+        "text": "Copy the prop into a local ref and edit that"
+      },
+      {
+        "id": "c",
+        "text": "Delete the prop"
+      },
+      {
+        "id": "d",
+        "text": "Use v-html"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-vmodel-01",
+    "topic": "events-vmodel",
+    "lesson": "define-emits",
+    "type": "single-choice",
+    "prompt": "How does a child component send data up to its parent?",
+    "explanation": "Children emit events; the parent listens with @eventName and updates its own state. Mutating props is not allowed (one-way data flow).",
+    "options": [
+      {
+        "id": "a",
+        "text": "By mutating a prop"
+      },
+      {
+        "id": "b",
+        "text": "By emitting a custom event (declared with defineEmits) that the parent listens to with @event"
+      },
+      {
+        "id": "c",
+        "text": "By editing the parent's variables directly"
+      },
+      {
+        "id": "d",
+        "text": "By using localStorage"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-vmodel-02",
+    "topic": "events-vmodel",
+    "lesson": "emitting-events",
+    "type": "single-choice",
+    "prompt": "What does a default v-model on a component desugar to?",
+    "explanation": "By default, v-model on a component maps to a modelValue prop plus an update:modelValue event. defineModel wires this up automatically.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A value prop and a change event"
+      },
+      {
+        "id": "b",
+        "text": "A modelValue prop and an update:modelValue event"
+      },
+      {
+        "id": "c",
+        "text": "A ref stored on the parent only"
+      },
+      {
+        "id": "d",
+        "text": "Two-way binding via localStorage"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "events-vmodel-03",
+    "topic": "events-vmodel",
+    "lesson": "component-v-model",
+    "type": "single-choice",
+    "prompt": "Since which Vue version is the defineModel macro stable?",
+    "explanation": "defineModel became stable in Vue 3.4, simplifying two-way component bindings.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Vue 2.6"
+      },
+      {
+        "id": "b",
+        "text": "Vue 3.0"
+      },
+      {
+        "id": "c",
+        "text": "Vue 3.4"
+      },
+      {
+        "id": "d",
+        "text": "Vue 4.0"
+      }
+    ],
+    "answer": "c"
+  },
+  {
+    "id": "events-vmodel-04",
+    "topic": "events-vmodel",
+    "lesson": "define-model",
+    "type": "fill-blank",
+    "prompt": "The compile-time macro used to declare the events a component can emit is define______. (complete the word)",
+    "explanation": "defineEmits declares a component's events (with optional TypeScript payload types) and returns the emit function.",
+    "answer": [
+      "Emits",
+      "emits",
+      "defineEmits"
+    ]
+  },
+  {
+    "id": "events-vmodel-05",
+    "topic": "events-vmodel",
+    "lesson": "multiple-v-models",
+    "type": "single-choice",
+    "prompt": "How do you expose a named model for v-model:title on a child?",
+    "explanation": "const title = defineModel('title') creates a named model that the parent binds with v-model:title. A component can expose several named models.",
+    "options": [
+      {
+        "id": "a",
+        "text": "defineModel('title')"
+      },
+      {
+        "id": "b",
+        "text": "defineProps('title')"
+      },
+      {
+        "id": "c",
+        "text": "defineTitle()"
+      },
+      {
+        "id": "d",
+        "text": "v-model is not nameable"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "events-vmodel-06",
+    "topic": "events-vmodel",
+    "lesson": "define-model",
+    "type": "match-pair",
+    "prompt": "Match each mechanism to what it's for.",
+    "explanation": "Props go down, emits go up, defineModel creates two-way v-model, and update:modelValue is the event behind a default v-model.",
+    "pairs": [
+      {
+        "left": "props",
+        "right": "Pass data down to a child"
+      },
+      {
+        "left": "defineEmits",
+        "right": "Send events (data) up to the parent"
+      },
+      {
+        "left": "defineModel",
+        "right": "Two-way binding via v-model"
+      },
+      {
+        "left": "update:modelValue",
+        "right": "The event a default v-model listens for"
+      }
+    ]
+  },
+  {
+    "id": "slots-provide-01",
+    "topic": "slots-provide",
+    "lesson": "default-slot",
+    "type": "single-choice",
+    "prompt": "What do slots let a parent pass into a child that props cannot?",
+    "explanation": "Props pass data values; slots pass template markup, letting the parent supply content that the child renders in a <slot> outlet.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Numbers"
+      },
+      {
+        "id": "b",
+        "text": "Template markup / content"
+      },
+      {
+        "id": "c",
+        "text": "CSS files"
+      },
+      {
+        "id": "d",
+        "text": "Environment variables"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-02",
+    "topic": "slots-provide",
+    "lesson": "slot-fallback",
+    "type": "single-choice",
+    "prompt": "What is the content written between <slot>…</slot> tags?",
+    "explanation": "Content inside a <slot> is fallback content; it renders only if the parent doesn't fill that slot.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is ignored"
+      },
+      {
+        "id": "b",
+        "text": "Fallback content, shown only when the parent provides nothing for that slot"
+      },
+      {
+        "id": "c",
+        "text": "The slot's name"
+      },
+      {
+        "id": "d",
+        "text": "A required prop"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-03",
+    "topic": "slots-provide",
+    "lesson": "named-slots",
+    "type": "single-choice",
+    "prompt": "How does a parent fill a named slot called \"footer\"?",
+    "explanation": "The parent uses <template #footer> (shorthand for v-slot:footer), which fills the child's <slot name=\"footer\">.",
+    "options": [
+      {
+        "id": "a",
+        "text": "<template #footer>…</template>"
+      },
+      {
+        "id": "b",
+        "text": "<slot name=\"footer\">…</slot>"
+      },
+      {
+        "id": "c",
+        "text": "<footer slot>…</footer>"
+      },
+      {
+        "id": "d",
+        "text": "footer={…}"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "slots-provide-04",
+    "topic": "slots-provide",
+    "lesson": "scoped-slots",
+    "type": "single-choice",
+    "prompt": "Why can't ordinary slot content read the child's internal variables?",
+    "explanation": "Slot content lives in the parent's scope. To expose child data, use a scoped slot: the child binds data on <slot :item=\"x\" /> and the parent receives it.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because slots are asynchronous"
+      },
+      {
+        "id": "b",
+        "text": "Because slot content is compiled in the parent's scope, not the child's"
+      },
+      {
+        "id": "c",
+        "text": "Because variables are private in JavaScript"
+      },
+      {
+        "id": "d",
+        "text": "It actually can, always"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-05",
+    "topic": "slots-provide",
+    "lesson": "named-slots",
+    "type": "fill-blank",
+    "prompt": "A slot that passes data from the child to the slot content is called a ______ slot. (one word)",
+    "explanation": "Scoped slots expose slot props from the child, so the parent can render child-owned data (like each item in a list).",
+    "answer": [
+      "scoped"
+    ]
+  },
+  {
+    "id": "slots-provide-06",
+    "topic": "slots-provide",
+    "lesson": "scoped-slots",
+    "type": "single-choice",
+    "prompt": "You want a reusable list component that iterates items internally but lets the parent decide how each row looks. What do you use?",
+    "explanation": "A scoped slot lets the child own iteration while exposing each item to the parent, which supplies the row markup — the ideal pattern for flexible list/renderer components.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A prop for each row"
+      },
+      {
+        "id": "b",
+        "text": "A scoped slot exposing each item"
+      },
+      {
+        "id": "c",
+        "text": "provide/inject"
+      },
+      {
+        "id": "d",
+        "text": "v-html"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-07",
+    "topic": "slots-provide",
+    "lesson": "prop-drilling-problem",
+    "type": "single-choice",
+    "prompt": "What problem do provide and inject solve?",
+    "explanation": "provide/inject lets an ancestor share data directly with any descendant, avoiding the need to thread a prop through every layer in between.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Styling components"
+      },
+      {
+        "id": "b",
+        "text": "Prop drilling — passing data through many intermediate components that don't use it"
+      },
+      {
+        "id": "c",
+        "text": "Routing between pages"
+      },
+      {
+        "id": "d",
+        "text": "Server-side rendering"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-08",
+    "topic": "slots-provide",
+    "lesson": "provide-and-inject",
+    "type": "single-choice",
+    "prompt": "To share reactive state via provide, what should you provide?",
+    "explanation": "Provide the ref/reactive itself so injectors stay reactive. Providing count.value hands over a one-time snapshot that won't update.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The ref's unwrapped value, e.g. count.value"
+      },
+      {
+        "id": "b",
+        "text": "The ref (or reactive object) itself, e.g. count"
+      },
+      {
+        "id": "c",
+        "text": "A copy made with JSON.stringify"
+      },
+      {
+        "id": "d",
+        "text": "A string key only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-09",
+    "topic": "slots-provide",
+    "lesson": "reactive-provide",
+    "type": "single-choice",
+    "prompt": "What is the second argument to inject(key, default) used for?",
+    "explanation": "The optional second argument is a fallback value returned when the key wasn't provided anywhere up the tree.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The component name"
+      },
+      {
+        "id": "b",
+        "text": "A default value used if no ancestor provided that key"
+      },
+      {
+        "id": "c",
+        "text": "A CSS class"
+      },
+      {
+        "id": "d",
+        "text": "The provide function"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "slots-provide-10",
+    "topic": "slots-provide",
+    "lesson": "injection-keys",
+    "type": "fill-blank",
+    "prompt": "For type-safe injection in TypeScript, use an Injection______ (a typed Symbol) as the key. (one word)",
+    "explanation": "An InjectionKey<T> is a Symbol typed to carry the value's type, so provide/inject are type-checked.",
+    "answer": [
+      "Key",
+      "key"
+    ]
+  },
+  {
+    "id": "slots-provide-11",
+    "topic": "slots-provide",
+    "lesson": "app-provide",
+    "type": "single-choice",
+    "prompt": "How can you let descendants read shared state but not directly mutate it?",
+    "explanation": "Wrapping the state in readonly() before providing prevents descendants from reassigning it; provide separate functions to make controlled changes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Provide it wrapped in readonly() and expose functions for controlled updates"
+      },
+      {
+        "id": "b",
+        "text": "Provide a plain string"
+      },
+      {
+        "id": "c",
+        "text": "You can't restrict it"
+      },
+      {
+        "id": "d",
+        "text": "Use v-once"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "slots-provide-12",
+    "topic": "slots-provide",
+    "lesson": "provide-and-inject",
+    "type": "single-choice",
+    "prompt": "When is a Pinia store a better fit than provide/inject?",
+    "explanation": "provide/inject shines for a subtree's context; app-wide state that many unrelated components share is usually cleaner in a Pinia store.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For a single value shared within one subtree"
+      },
+      {
+        "id": "b",
+        "text": "For app-wide shared state used across many unrelated parts of the app"
+      },
+      {
+        "id": "c",
+        "text": "Never — provide/inject is always better"
+      },
+      {
+        "id": "d",
+        "text": "Only for CSS variables"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "composables-01",
+    "topic": "composables",
+    "lesson": "what-is-a-composable",
+    "type": "single-choice",
+    "prompt": "What is a composable in Vue?",
+    "explanation": "A composable is a reusable function, conventionally named useX, that packages reactive state and behavior using the Composition API.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A CSS preprocessor"
+      },
+      {
+        "id": "b",
+        "text": "A function (named useX) that uses the Composition API to encapsulate and reuse stateful logic"
+      },
+      {
+        "id": "c",
+        "text": "A special kind of component tag"
+      },
+      {
+        "id": "d",
+        "text": "A router configuration object"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "composables-02",
+    "topic": "composables",
+    "lesson": "mouse-tracker-composable",
+    "type": "single-choice",
+    "prompt": "Two components call the same composable that declares its state inside the function. Do they share that state?",
+    "explanation": "State created inside the composable is per-call. To share one instance across the app, declare the state at module scope (outside the function).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, always shared"
+      },
+      {
+        "id": "b",
+        "text": "No — each call creates its own independent state"
+      },
+      {
+        "id": "c",
+        "text": "Only in production builds"
+      },
+      {
+        "id": "d",
+        "text": "Only if they are siblings"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "composables-03",
+    "topic": "composables",
+    "lesson": "fetch-composable",
+    "type": "single-choice",
+    "prompt": "How does a composable make components share a single state instance?",
+    "explanation": "Module-scoped state (declared outside the useX function) is created once and shared by every caller — a lightweight store pattern.",
+    "options": [
+      {
+        "id": "a",
+        "text": "By declaring the reactive state at module scope, outside the function"
+      },
+      {
+        "id": "b",
+        "text": "By using v-html"
+      },
+      {
+        "id": "c",
+        "text": "It's impossible without Pinia"
+      },
+      {
+        "id": "d",
+        "text": "By naming it without 'use'"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "composables-04",
+    "topic": "composables",
+    "lesson": "composable-arguments",
+    "type": "fill-blank",
+    "prompt": "By convention, a composable's name starts with the word ______. (one word)",
+    "explanation": "Composables are named useX (useMouse, useFetch, useCounter) by convention.",
+    "answer": [
+      "use"
+    ]
+  },
+  {
+    "id": "composables-05",
+    "topic": "composables",
+    "lesson": "composable-conventions",
+    "type": "multiple-choice",
+    "prompt": "Why did composables replace mixins? Select all that apply.",
+    "explanation": "Composables avoid mixins' name collisions and unclear origins; you see the imports and returned names and can rename on destructure. Mixins are not server-only.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mixins could have name collisions"
+      },
+      {
+        "id": "b",
+        "text": "With mixins it was unclear which mixin a property came from"
+      },
+      {
+        "id": "c",
+        "text": "Composables make the source of each value explicit and renamable"
+      },
+      {
+        "id": "d",
+        "text": "Mixins only work on the server"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "composables-06",
+    "topic": "composables",
+    "lesson": "what-is-a-composable",
+    "type": "single-choice",
+    "prompt": "Where should a composable put its event-listener cleanup?",
+    "explanation": "A composable registers onUnmounted internally; the hook belongs to whichever component called it, so cleanup happens automatically on unmount.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nowhere — Vue never cleans up listeners"
+      },
+      {
+        "id": "b",
+        "text": "In an onUnmounted hook inside the composable, so it runs for the calling component"
+      },
+      {
+        "id": "c",
+        "text": "In the template"
+      },
+      {
+        "id": "d",
+        "text": "In package.json"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-01",
+    "topic": "routing-state",
+    "lesson": "router-setup",
+    "type": "single-choice",
+    "prompt": "What does <RouterView> do?",
+    "explanation": "<RouterView> is the outlet where Vue Router renders whichever component matches the current route.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Renders the component matched by the current URL"
+      },
+      {
+        "id": "b",
+        "text": "Creates a new browser tab"
+      },
+      {
+        "id": "c",
+        "text": "Defines the list of routes"
+      },
+      {
+        "id": "d",
+        "text": "Fetches data from an API"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "routing-state-02",
+    "topic": "routing-state",
+    "lesson": "router-link-view",
+    "type": "single-choice",
+    "prompt": "How do you read a dynamic route parameter :id inside a component?",
+    "explanation": "useRoute() returns the current route; its params object holds dynamic segments, e.g. route.params.id.",
+    "options": [
+      {
+        "id": "a",
+        "text": "useRouter().id"
+      },
+      {
+        "id": "b",
+        "text": "useRoute().params.id"
+      },
+      {
+        "id": "c",
+        "text": "this.$params.id"
+      },
+      {
+        "id": "d",
+        "text": "route.query.id only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-03",
+    "topic": "routing-state",
+    "lesson": "dynamic-routes",
+    "type": "single-choice",
+    "prompt": "Why should you use <RouterLink> instead of a plain <a href> for internal navigation?",
+    "explanation": "RouterLink handles the click to navigate within the SPA without reloading the page; a plain <a href> triggers a full reload.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It looks nicer"
+      },
+      {
+        "id": "b",
+        "text": "It navigates client-side without a full-page reload"
+      },
+      {
+        "id": "c",
+        "text": "Plain <a> tags don't work in Vue"
+      },
+      {
+        "id": "d",
+        "text": "It automatically fetches data"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-04",
+    "topic": "routing-state",
+    "lesson": "programmatic-navigation",
+    "type": "fill-blank",
+    "prompt": "With createWebHistory (clean URLs), the server must serve index.html for unknown paths — a so-called SPA ______. (one word)",
+    "explanation": "History mode needs a SPA fallback so deep-link refreshes serve index.html instead of 404ing. Hash mode avoids this.",
+    "answer": [
+      "fallback"
+    ]
+  },
+  {
+    "id": "routing-state-05",
+    "topic": "routing-state",
+    "lesson": "nested-routes",
+    "type": "single-choice",
+    "prompt": "What is a navigation guard like router.beforeEach used for?",
+    "explanation": "Guards run before a route change; returning false cancels it and returning a location redirects — commonly used to protect authenticated routes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Styling links"
+      },
+      {
+        "id": "b",
+        "text": "Running logic (e.g. auth checks) before a navigation completes, to allow, cancel, or redirect it"
+      },
+      {
+        "id": "c",
+        "text": "Lazy-loading images"
+      },
+      {
+        "id": "d",
+        "text": "Defining CSS transitions"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-06",
+    "topic": "routing-state",
+    "lesson": "navigation-guards",
+    "type": "ordering",
+    "prompt": "Order these steps to set up Vue Router.",
+    "explanation": "Define routes, create the router with a history mode, register it on the app with app.use, then render matched components with <RouterView>.",
+    "items": [
+      {
+        "id": "define",
+        "text": "Define the routes array (path → component)"
+      },
+      {
+        "id": "create",
+        "text": "createRouter({ history, routes })"
+      },
+      {
+        "id": "use",
+        "text": "app.use(router)"
+      },
+      {
+        "id": "render",
+        "text": "Add <RouterView> to the template"
+      }
+    ],
+    "answer": [
+      "define",
+      "create",
+      "use",
+      "render"
+    ]
+  },
+  {
+    "id": "routing-state-07",
+    "topic": "routing-state",
+    "lesson": "pinia-setup",
+    "type": "single-choice",
+    "prompt": "What are the three core parts of a Pinia store?",
+    "explanation": "A Pinia store has state (reactive data), getters (cached derived values), and actions (methods that change state, possibly async).",
+    "options": [
+      {
+        "id": "a",
+        "text": "template, script, style"
+      },
+      {
+        "id": "b",
+        "text": "state, getters, actions"
+      },
+      {
+        "id": "c",
+        "text": "props, emits, slots"
+      },
+      {
+        "id": "d",
+        "text": "data, methods, watchers"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-08",
+    "topic": "routing-state",
+    "lesson": "define-store",
+    "type": "single-choice",
+    "prompt": "Why use storeToRefs when destructuring a store?",
+    "explanation": "Like destructuring a reactive object, pulling state/getters off a store copies values and breaks reactivity. storeToRefs preserves it; actions can be destructured directly.",
+    "options": [
+      {
+        "id": "a",
+        "text": "To make the store read-only"
+      },
+      {
+        "id": "b",
+        "text": "Destructuring state/getters directly loses reactivity; storeToRefs returns them as reactive refs"
+      },
+      {
+        "id": "c",
+        "text": "To rename the store"
+      },
+      {
+        "id": "d",
+        "text": "It's required to call actions"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-09",
+    "topic": "routing-state",
+    "lesson": "store-state",
+    "type": "single-choice",
+    "prompt": "What is Pinia's relationship to Vuex?",
+    "explanation": "Pinia is the official, recommended state library for Vue and the successor to Vuex, which is in maintenance.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pinia is a plugin for Vuex"
+      },
+      {
+        "id": "b",
+        "text": "Pinia is the officially recommended successor to Vuex, which is now in maintenance mode"
+      },
+      {
+        "id": "c",
+        "text": "They are unrelated"
+      },
+      {
+        "id": "d",
+        "text": "Vuex replaced Pinia"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-10",
+    "topic": "routing-state",
+    "lesson": "store-getters",
+    "type": "fill-blank",
+    "prompt": "You define a Pinia store with the function define______('id', ...). (complete the word)",
+    "explanation": "defineStore(id, setupOrOptions) creates a store; you then use it via the returned useXStore() function.",
+    "answer": [
+      "Store",
+      "store",
+      "defineStore"
+    ]
+  },
+  {
+    "id": "routing-state-11",
+    "topic": "routing-state",
+    "lesson": "store-actions",
+    "type": "single-choice",
+    "prompt": "Which state is the best fit for a Pinia store rather than a local ref?",
+    "explanation": "Pinia shines for genuinely app-wide shared state (user, cart, theme). Component-only data belongs in a local ref.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A counter used by one component only"
+      },
+      {
+        "id": "b",
+        "text": "The logged-in user, needed by many unrelated components across the app"
+      },
+      {
+        "id": "c",
+        "text": "A temporary value inside a single function"
+      },
+      {
+        "id": "d",
+        "text": "A CSS class name"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "routing-state-12",
+    "topic": "routing-state",
+    "lesson": "store-to-refs",
+    "type": "multiple-choice",
+    "prompt": "Which statements about Pinia are true? Select all that apply.",
+    "explanation": "Actions may be async, getters are cached like computed, and Pinia must be installed with app.use. A store is shared and can be used anywhere.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Actions can be async (e.g. fetch data then set state)"
+      },
+      {
+        "id": "b",
+        "text": "Getters are cached, like computed properties"
+      },
+      {
+        "id": "c",
+        "text": "You must register Pinia with app.use(createPinia())"
+      },
+      {
+        "id": "d",
+        "text": "A store can only be used in one component"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "advanced-reactivity-01",
+    "topic": "advanced-reactivity",
+    "lesson": "template-refs-dom",
+    "type": "single-choice",
+    "prompt": "When is a template ref populated with its DOM element?",
+    "explanation": "Template refs are null during setup and are filled once the element is mounted, so you access them in onMounted or later.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Immediately during setup"
+      },
+      {
+        "id": "b",
+        "text": "After the component mounts (e.g. in onMounted)"
+      },
+      {
+        "id": "c",
+        "text": "Only on the server"
+      },
+      {
+        "id": "d",
+        "text": "Never — refs don't hold elements"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-02",
+    "topic": "advanced-reactivity",
+    "lesson": "component-refs",
+    "type": "single-choice",
+    "prompt": "How does a <script setup> child let a parent call one of its methods via a ref?",
+    "explanation": "<script setup> components are closed by default; defineExpose declares which properties/methods are visible to a parent's component ref.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It's automatic — all methods are public"
+      },
+      {
+        "id": "b",
+        "text": "The child declares the method with defineExpose"
+      },
+      {
+        "id": "c",
+        "text": "The parent uses provide/inject"
+      },
+      {
+        "id": "d",
+        "text": "It's impossible"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-03",
+    "topic": "advanced-reactivity",
+    "lesson": "next-tick",
+    "type": "single-choice",
+    "prompt": "You change state and immediately need to read the updated DOM. What do you await?",
+    "explanation": "Vue batches DOM updates; awaiting nextTick() resolves after those updates are applied, so the DOM reflects your latest state.",
+    "options": [
+      {
+        "id": "a",
+        "text": "onMounted()"
+      },
+      {
+        "id": "b",
+        "text": "nextTick()"
+      },
+      {
+        "id": "c",
+        "text": "watchEffect()"
+      },
+      {
+        "id": "d",
+        "text": "setTimeout(0)"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-04",
+    "topic": "advanced-reactivity",
+    "lesson": "to-ref-and-to-refs",
+    "type": "fill-blank",
+    "prompt": "To destructure a reactive object without losing reactivity, wrap it with to______. (complete the word)",
+    "explanation": "toRefs converts each property of a reactive object into a linked ref, so destructured values stay reactive.",
+    "answer": [
+      "Refs",
+      "refs",
+      "toRefs"
+    ]
+  },
+  {
+    "id": "advanced-reactivity-05",
+    "topic": "advanced-reactivity",
+    "lesson": "unref-and-is-ref",
+    "type": "single-choice",
+    "prompt": "What does toValue(x) do that unref(x) does not?",
+    "explanation": "unref returns x.value for a ref (else x). toValue additionally invokes x when it's a getter function — ideal for MaybeRefOrGetter inputs in composables.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nothing — they are identical"
+      },
+      {
+        "id": "b",
+        "text": "It also calls x if x is a getter function, not just unwrapping a ref"
+      },
+      {
+        "id": "c",
+        "text": "It mutates x"
+      },
+      {
+        "id": "d",
+        "text": "It only works on numbers"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-06",
+    "topic": "advanced-reactivity",
+    "lesson": "v-for-template-refs",
+    "type": "single-choice",
+    "prompt": "If you put ref=\"item\" on an element inside a v-for, what does the ref hold?",
+    "explanation": "A ref used inside v-for collects the rendered elements into an array whose order matches the list.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the first element"
+      },
+      {
+        "id": "b",
+        "text": "An array of the elements, in list order"
+      },
+      {
+        "id": "c",
+        "text": "A single merged element"
+      },
+      {
+        "id": "d",
+        "text": "null"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-07",
+    "topic": "advanced-reactivity",
+    "lesson": "how-reactivity-works",
+    "type": "single-choice",
+    "prompt": "What JavaScript feature powers Vue 3's reactivity for objects?",
+    "explanation": "Vue 3 uses Proxies: reads are tracked and writes trigger dependent effects to re-run. (Vue 2 used Object.defineProperty.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Object.defineProperty on every property"
+      },
+      {
+        "id": "b",
+        "text": "Proxies (with get/set traps that track and trigger)"
+      },
+      {
+        "id": "c",
+        "text": "Web Workers"
+      },
+      {
+        "id": "d",
+        "text": "localStorage"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-08",
+    "topic": "advanced-reactivity",
+    "lesson": "shallow-ref",
+    "type": "single-choice",
+    "prompt": "What does shallowRef track?",
+    "explanation": "shallowRef reacts to .value being reassigned but not to deep mutations of the held object; use triggerRef to force an update after a deep change.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Every nested property deeply"
+      },
+      {
+        "id": "b",
+        "text": "Only reassignment of its .value, not deep mutations"
+      },
+      {
+        "id": "c",
+        "text": "Nothing at all"
+      },
+      {
+        "id": "d",
+        "text": "Only arrays"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-09",
+    "topic": "advanced-reactivity",
+    "lesson": "shallow-reactive",
+    "type": "single-choice",
+    "prompt": "What is customRef used for?",
+    "explanation": "customRef gives you track and trigger functions so you decide exactly when the ref records a dependency and notifies effects — perfect for debounce/throttle.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Styling refs"
+      },
+      {
+        "id": "b",
+        "text": "Creating a ref with custom control over when it tracks and triggers (e.g. a debounced ref)"
+      },
+      {
+        "id": "c",
+        "text": "Making refs read-only"
+      },
+      {
+        "id": "d",
+        "text": "Routing"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-10",
+    "topic": "advanced-reactivity",
+    "lesson": "custom-ref",
+    "type": "fill-blank",
+    "prompt": "To flag an object so Vue never makes it reactive, wrap it with mark______. (complete the word)",
+    "explanation": "markRaw prevents an object from being converted into a reactive proxy — useful for third-party instances or large inert data.",
+    "answer": [
+      "Raw",
+      "raw",
+      "markRaw"
+    ]
+  },
+  {
+    "id": "advanced-reactivity-11",
+    "topic": "advanced-reactivity",
+    "lesson": "to-raw-and-mark-raw",
+    "type": "single-choice",
+    "prompt": "You deeply mutate a shallowRef's held object and the UI doesn't update. What's a correct fix?",
+    "explanation": "shallowRef only reacts to .value reassignment, so either reassign .value or call triggerRef to force dependent effects to re-run.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Call triggerRef(theRef) or reassign theRef.value"
+      },
+      {
+        "id": "b",
+        "text": "Nothing can update it"
+      },
+      {
+        "id": "c",
+        "text": "Wrap it in markRaw"
+      },
+      {
+        "id": "d",
+        "text": "Use v-once"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "advanced-reactivity-12",
+    "topic": "advanced-reactivity",
+    "lesson": "how-reactivity-works",
+    "type": "match-pair",
+    "prompt": "Match each reactivity tool to its purpose.",
+    "explanation": "shallowRef limits depth, customRef customizes timing, toRaw unwraps a proxy, and markRaw opts an object out of reactivity entirely.",
+    "pairs": [
+      {
+        "left": "shallowRef",
+        "right": "Track only top-level .value reassignment"
+      },
+      {
+        "left": "customRef",
+        "right": "Custom control of track/trigger (e.g. debounce)"
+      },
+      {
+        "left": "toRaw",
+        "right": "Get the original non-proxied object"
+      },
+      {
+        "left": "markRaw",
+        "right": "Prevent an object from becoming reactive"
+      }
+    ]
+  },
+  {
+    "id": "advanced-reactivity-13",
+    "topic": "advanced-reactivity",
+    "lesson": "teleport-basics",
+    "type": "single-choice",
+    "prompt": "What does <Teleport to=\"body\"> do?",
+    "explanation": "Teleport moves where children are rendered in the DOM (e.g. to <body>) but keeps their state, props, and events tied to the original component.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sends data to a server called body"
+      },
+      {
+        "id": "b",
+        "text": "Renders its children at a different DOM location (the body) while keeping them logically in your component"
+      },
+      {
+        "id": "c",
+        "text": "Deletes the body element"
+      },
+      {
+        "id": "d",
+        "text": "Disables reactivity"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-14",
+    "topic": "advanced-reactivity",
+    "lesson": "teleport-disabled",
+    "type": "single-choice",
+    "prompt": "Why is Teleport useful for modals and tooltips?",
+    "explanation": "Rendering to <body> frees the overlay from ancestor clipping and stacking, a common cause of cut-off or mis-layered modals.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It makes them load faster"
+      },
+      {
+        "id": "b",
+        "text": "It lets them escape an ancestor's overflow: hidden or z-index stacking context"
+      },
+      {
+        "id": "c",
+        "text": "It encrypts them"
+      },
+      {
+        "id": "d",
+        "text": "It disables clicks"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-15",
+    "topic": "advanced-reactivity",
+    "lesson": "suspense-component",
+    "type": "single-choice",
+    "prompt": "What does <Suspense> coordinate?",
+    "explanation": "Suspense waits for async descendants (async setup or async components) and displays the #fallback slot until they're ready, then shows #default.",
+    "options": [
+      {
+        "id": "a",
+        "text": "CSS transitions"
+      },
+      {
+        "id": "b",
+        "text": "Async dependencies in its subtree, showing a #fallback until they resolve"
+      },
+      {
+        "id": "c",
+        "text": "Routing guards"
+      },
+      {
+        "id": "d",
+        "text": "localStorage writes"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-16",
+    "topic": "advanced-reactivity",
+    "lesson": "suspense-status",
+    "type": "fill-blank",
+    "prompt": "As of the current docs, Suspense is still marked ______ (its API may change). (one word)",
+    "explanation": "Suspense is an experimental feature; its API could change, so use it deliberately.",
+    "answer": [
+      "experimental"
+    ]
+  },
+  {
+    "id": "advanced-reactivity-17",
+    "topic": "advanced-reactivity",
+    "lesson": "teleport-basics",
+    "type": "single-choice",
+    "prompt": "Does Teleport change a component's logical parent?",
+    "explanation": "Teleport changes where content renders in the DOM, not the component hierarchy — the teleported content stays logically part of your component.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, it reparents the component entirely"
+      },
+      {
+        "id": "b",
+        "text": "No — it only moves the DOM location; props, events, and reactivity behave as if in place"
+      },
+      {
+        "id": "c",
+        "text": "Only in the Options API"
+      },
+      {
+        "id": "d",
+        "text": "Only for tooltips"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-18",
+    "topic": "advanced-reactivity",
+    "lesson": "suspense-component",
+    "type": "single-choice",
+    "prompt": "What happens if a Teleport's target selector doesn't exist in the DOM?",
+    "explanation": "The teleport target must exist when the Teleport mounts. Teleporting to body (which always exists) or ensuring the target is present avoids the warning.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Vue creates it automatically"
+      },
+      {
+        "id": "b",
+        "text": "The content has nowhere to render and Vue warns — ensure the target exists (e.g. body)"
+      },
+      {
+        "id": "c",
+        "text": "The app crashes irrecoverably"
+      },
+      {
+        "id": "d",
+        "text": "It renders on the server instead"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-19",
+    "topic": "advanced-reactivity",
+    "lesson": "transition-basics",
+    "type": "single-choice",
+    "prompt": "What does the <Transition> component animate?",
+    "explanation": "<Transition> animates one element/component on enter and leave (triggered by v-if, v-show, a dynamic component, or a key change). Lists use <TransitionGroup>.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A whole list of elements"
+      },
+      {
+        "id": "b",
+        "text": "A single element or component as it enters or leaves"
+      },
+      {
+        "id": "c",
+        "text": "Only images"
+      },
+      {
+        "id": "d",
+        "text": "Router navigations only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-20",
+    "topic": "advanced-reactivity",
+    "lesson": "transition-classes",
+    "type": "single-choice",
+    "prompt": "Which class should carry the CSS transition timing?",
+    "explanation": "The *-active classes are applied for the whole transition, so the transition/animation declaration goes there; *-from and *-to hold the start and end states.",
+    "options": [
+      {
+        "id": "a",
+        "text": "v-enter-from"
+      },
+      {
+        "id": "b",
+        "text": "v-enter-active (and v-leave-active)"
+      },
+      {
+        "id": "c",
+        "text": "v-enter-to"
+      },
+      {
+        "id": "d",
+        "text": "v-hidden"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-21",
+    "topic": "advanced-reactivity",
+    "lesson": "named-transitions",
+    "type": "single-choice",
+    "prompt": "What does mode=\"out-in\" achieve when swapping elements?",
+    "explanation": "out-in sequences the transition so the old content leaves completely before the new content enters, preventing an awkward overlap.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Both elements animate at once"
+      },
+      {
+        "id": "b",
+        "text": "The leaving element finishes animating out before the entering one animates in"
+      },
+      {
+        "id": "c",
+        "text": "It disables the transition"
+      },
+      {
+        "id": "d",
+        "text": "It reverses the animation"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-22",
+    "topic": "advanced-reactivity",
+    "lesson": "transition-modes",
+    "type": "fill-blank",
+    "prompt": "To animate a list (adding, removing, reordering items), use <Transition______>. (complete the tag name)",
+    "explanation": "<TransitionGroup> animates lists; each child needs a stable key and reordering uses a *-move class.",
+    "answer": [
+      "Group",
+      "group",
+      "TransitionGroup"
+    ]
+  },
+  {
+    "id": "advanced-reactivity-23",
+    "topic": "advanced-reactivity",
+    "lesson": "transition-group",
+    "type": "single-choice",
+    "prompt": "Why must <TransitionGroup> children have stable keys (not the index)?",
+    "explanation": "Stable keys let Vue track which item moved where. Index keys shift on reorder, so Vue can't compute correct move transitions.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For SEO"
+      },
+      {
+        "id": "b",
+        "text": "Move/enter/leave animations rely on stable item identity; index keys change on reorder and break the animations"
+      },
+      {
+        "id": "c",
+        "text": "Keys are only decorative"
+      },
+      {
+        "id": "d",
+        "text": "To reduce bundle size"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "advanced-reactivity-24",
+    "topic": "advanced-reactivity",
+    "lesson": "transition-classes",
+    "type": "multiple-choice",
+    "prompt": "Which can trigger a <Transition>? Select all that apply.",
+    "explanation": "All four trigger enter/leave transitions: v-if, v-show, swapping a dynamic component, and a changing key.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Toggling v-if"
+      },
+      {
+        "id": "b",
+        "text": "Toggling v-show"
+      },
+      {
+        "id": "c",
+        "text": "Changing a dynamic <component :is>"
+      },
+      {
+        "id": "d",
+        "text": "Changing an element's key"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": "tooling-typescript-01",
+    "topic": "tooling-typescript",
+    "lesson": "define-async-component",
+    "type": "single-choice",
+    "prompt": "What does defineAsyncComponent do?",
+    "explanation": "defineAsyncComponent wraps a dynamic import so the component's code is split into a chunk loaded only when it's first rendered — shrinking the initial bundle.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Makes a component render on the server"
+      },
+      {
+        "id": "b",
+        "text": "Lazy-loads a component in its own chunk, fetched on first render"
+      },
+      {
+        "id": "c",
+        "text": "Caches a component's state"
+      },
+      {
+        "id": "d",
+        "text": "Adds animations"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-02",
+    "topic": "tooling-typescript",
+    "lesson": "route-level-code-splitting",
+    "type": "single-choice",
+    "prompt": "By default, what happens to a component's state when you toggle it off with v-if and back on?",
+    "explanation": "v-if truly removes and recreates the component (losing state). <KeepAlive> caches the instance so state and DOM persist across toggles.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is preserved automatically"
+      },
+      {
+        "id": "b",
+        "text": "The component is destroyed and recreated, losing its state — unless wrapped in <KeepAlive>"
+      },
+      {
+        "id": "c",
+        "text": "It moves to localStorage"
+      },
+      {
+        "id": "d",
+        "text": "It becomes read-only"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-03",
+    "topic": "tooling-typescript",
+    "lesson": "keep-alive-component",
+    "type": "single-choice",
+    "prompt": "What is the difference between v-once and v-memo?",
+    "explanation": "v-once freezes a subtree after the first render; v-memo=\"[deps]\" conditionally skips re-rendering unless a dependency changes.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are identical"
+      },
+      {
+        "id": "b",
+        "text": "v-once renders a subtree once and never updates it; v-memo re-renders only when its listed dependencies change"
+      },
+      {
+        "id": "c",
+        "text": "v-memo renders once; v-once memoizes deps"
+      },
+      {
+        "id": "d",
+        "text": "Both cache network requests"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-04",
+    "topic": "tooling-typescript",
+    "lesson": "v-once-directive",
+    "type": "fill-blank",
+    "prompt": "A kept-alive component fires the onActivated and on______ hooks when shown and hidden. (complete the word)",
+    "explanation": "Inside <KeepAlive>, components use onActivated (shown) and onDeactivated (hidden) instead of mounted/unmounted.",
+    "answer": [
+      "Deactivated",
+      "deactivated",
+      "onDeactivated"
+    ]
+  },
+  {
+    "id": "tooling-typescript-05",
+    "topic": "tooling-typescript",
+    "lesson": "v-memo-directive",
+    "type": "single-choice",
+    "prompt": "What is the main risk of using v-memo with an incomplete dependency array?",
+    "explanation": "v-memo only re-renders when a listed dependency changes. If a value the subtree uses isn't in the deps, its changes won't show — a stale UI.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Larger bundle size"
+      },
+      {
+        "id": "b",
+        "text": "Stale UI — Vue skips updates for changes not listed in the deps"
+      },
+      {
+        "id": "c",
+        "text": "It disables reactivity globally"
+      },
+      {
+        "id": "d",
+        "text": "Nothing; it's always safe"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-06",
+    "topic": "tooling-typescript",
+    "lesson": "keep-alive-component",
+    "type": "multiple-choice",
+    "prompt": "Which are legitimate everyday performance practices in Vue? Select all that apply.",
+    "explanation": "Stable keys, cached computeds, and a production build are solid defaults. v-once freezes updates, so blanketing everything with it would break dynamic UI.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use stable :key values in v-for"
+      },
+      {
+        "id": "b",
+        "text": "Use computed for cached derived values"
+      },
+      {
+        "id": "c",
+        "text": "Ship a production build (vite build)"
+      },
+      {
+        "id": "d",
+        "text": "Wrap every component in v-once"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "tooling-typescript-07",
+    "topic": "tooling-typescript",
+    "lesson": "custom-directives-basics",
+    "type": "single-choice",
+    "prompt": "What are custom directives best used for?",
+    "explanation": "Directives apply low-level, element-level DOM behavior. Whole-UI reuse belongs to components; reusable logic to composables.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reusing whole UI sections with state"
+      },
+      {
+        "id": "b",
+        "text": "Reusable low-level DOM behavior on elements (focus, click-outside, tooltips)"
+      },
+      {
+        "id": "c",
+        "text": "Defining routes"
+      },
+      {
+        "id": "d",
+        "text": "Storing global state"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-08",
+    "topic": "tooling-typescript",
+    "lesson": "directive-hooks",
+    "type": "single-choice",
+    "prompt": "In <script setup>, how do you make a local directive usable in the template?",
+    "explanation": "A <script setup> variable named vName is automatically exposed to the template as v-name.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Name a variable vSomething; it becomes usable as v-something"
+      },
+      {
+        "id": "b",
+        "text": "Register it in a directives: option"
+      },
+      {
+        "id": "c",
+        "text": "Import it from vue-router"
+      },
+      {
+        "id": "d",
+        "text": "You can't use local directives"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "tooling-typescript-09",
+    "topic": "tooling-typescript",
+    "lesson": "directive-binding-values",
+    "type": "single-choice",
+    "prompt": "What does a directive's binding object contain?",
+    "explanation": "The binding carries value, arg, and modifiers; the hook also receives the element (el) itself.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The component's props"
+      },
+      {
+        "id": "b",
+        "text": "The value, the arg (after the colon), and the modifiers (after dots)"
+      },
+      {
+        "id": "c",
+        "text": "The route params"
+      },
+      {
+        "id": "d",
+        "text": "The CSS styles"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-10",
+    "topic": "tooling-typescript",
+    "lesson": "vue-plugins",
+    "type": "fill-blank",
+    "prompt": "You install a plugin on the app with app.______(plugin, options). (one word/method)",
+    "explanation": "app.use(plugin, options) runs the plugin's install(app, options) — the same mechanism used for Vue Router and Pinia.",
+    "answer": [
+      "use"
+    ]
+  },
+  {
+    "id": "tooling-typescript-11",
+    "topic": "tooling-typescript",
+    "lesson": "custom-directives-basics",
+    "type": "single-choice",
+    "prompt": "A directive adds a document event listener in mounted. Why must it also define unmounted?",
+    "explanation": "Listeners added in mounted must be removed in unmounted; otherwise they leak memory and keep firing after the element is gone.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For styling"
+      },
+      {
+        "id": "b",
+        "text": "To remove the listener when the element is destroyed, preventing memory leaks"
+      },
+      {
+        "id": "c",
+        "text": "It doesn't need to"
+      },
+      {
+        "id": "d",
+        "text": "To enable animations"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-12",
+    "topic": "tooling-typescript",
+    "lesson": "vue-plugins",
+    "type": "single-choice",
+    "prompt": "What is a Vue plugin?",
+    "explanation": "A plugin packages app-wide setup — registering global components/directives, providing values, adding globalProperties — and is applied with app.use.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A browser extension"
+      },
+      {
+        "id": "b",
+        "text": "An object with an install(app, options) method (or a function) that performs app-wide setup"
+      },
+      {
+        "id": "c",
+        "text": "A CSS framework"
+      },
+      {
+        "id": "d",
+        "text": "A type of ref"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-13",
+    "topic": "tooling-typescript",
+    "lesson": "typescript-sfc-setup",
+    "type": "single-choice",
+    "prompt": "What is the idiomatic way to type a component's props in <script setup>?",
+    "explanation": "defineProps<{ ... }>() declares typed props at compile time; withDefaults adds defaults (object/array defaults require a factory function).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cast them with `as any`"
+      },
+      {
+        "id": "b",
+        "text": "The type-based macro: defineProps<{ ... }>()"
+      },
+      {
+        "id": "c",
+        "text": "In a separate .d.ts file only"
+      },
+      {
+        "id": "d",
+        "text": "You cannot type props"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-14",
+    "topic": "tooling-typescript",
+    "lesson": "typing-props-emits",
+    "type": "single-choice",
+    "prompt": "Why can't plain tsc type-check your Vue components?",
+    "explanation": ".vue SFCs need a Vue-aware checker. vue-tsc (and Volar in the editor) understand SFCs; plain tsc skips them.",
+    "options": [
+      {
+        "id": "a",
+        "text": "tsc is too slow"
+      },
+      {
+        "id": "b",
+        "text": "tsc doesn't understand the .vue single-file component format; you need vue-tsc"
+      },
+      {
+        "id": "c",
+        "text": "Vue components aren't typed"
+      },
+      {
+        "id": "d",
+        "text": "You must compile to JavaScript first by hand"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-15",
+    "topic": "tooling-typescript",
+    "lesson": "typing-refs",
+    "type": "single-choice",
+    "prompt": "How do you type a template ref to a child component instance?",
+    "explanation": "InstanceType<typeof Comp> is the component instance type; the ref is null until mount, so include | null. You can only access members the child exposed via defineExpose.",
+    "options": [
+      {
+        "id": "a",
+        "text": "ref<any>(null)"
+      },
+      {
+        "id": "b",
+        "text": "ref<InstanceType<typeof ChildComponent> | null>(null)"
+      },
+      {
+        "id": "c",
+        "text": "ref<ChildComponent>()"
+      },
+      {
+        "id": "d",
+        "text": "reactive(ChildComponent)"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-16",
+    "topic": "tooling-typescript",
+    "lesson": "generic-components",
+    "type": "fill-blank",
+    "prompt": "The Vue-aware tool that type-checks .vue files (used in this project's build) is vue-______. (complete the word)",
+    "explanation": "vue-tsc type-checks single-file components; this project runs vue-tsc -b before vite build.",
+    "answer": [
+      "tsc",
+      "vue-tsc"
+    ]
+  },
+  {
+    "id": "tooling-typescript-17",
+    "topic": "tooling-typescript",
+    "lesson": "type-checking-vue-tsc",
+    "type": "single-choice",
+    "prompt": "How do you make a component generic so its props relate by type?",
+    "explanation": "Since Vue 3.3, the generic attribute on <script setup> lets you use a type parameter T across defineProps and defineEmits so related props share a type.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add the generic attribute: <script setup lang=\"ts\" generic=\"T\">"
+      },
+      {
+        "id": "b",
+        "text": "Wrap it in reactive()"
+      },
+      {
+        "id": "c",
+        "text": "Use v-generic in the template"
+      },
+      {
+        "id": "d",
+        "text": "It's not possible in Vue"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "tooling-typescript-18",
+    "topic": "tooling-typescript",
+    "lesson": "typing-props-emits",
+    "type": "single-choice",
+    "prompt": "What's a correct way to give a type-based array prop a default value?",
+    "explanation": "Object and array prop defaults must be returned from a factory function to avoid sharing one instance across components: { tags: () => [] }.",
+    "options": [
+      {
+        "id": "a",
+        "text": "withDefaults(defineProps<{ tags?: string[] }>(), { tags: [] })"
+      },
+      {
+        "id": "b",
+        "text": "withDefaults(defineProps<{ tags?: string[] }>(), { tags: () => [] })"
+      },
+      {
+        "id": "c",
+        "text": "defineProps({ tags: [] })"
+      },
+      {
+        "id": "d",
+        "text": "Array defaults aren't allowed"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-19",
+    "topic": "tooling-typescript",
+    "lesson": "vitest-setup",
+    "type": "single-choice",
+    "prompt": "What does Vue Test Utils' mount() return?",
+    "explanation": "mount renders the component into a test DOM and returns a wrapper with methods like find, text, trigger, and emitted.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The component's source code"
+      },
+      {
+        "id": "b",
+        "text": "A wrapper you can query, interact with, and inspect"
+      },
+      {
+        "id": "c",
+        "text": "A production build"
+      },
+      {
+        "id": "d",
+        "text": "A router instance"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-20",
+    "topic": "tooling-typescript",
+    "lesson": "vue-test-utils-mount",
+    "type": "single-choice",
+    "prompt": "Why should you await wrapper.trigger('click') before asserting on the result?",
+    "explanation": "Vue applies updates asynchronously; awaiting the triggered event (or nextTick) lets the DOM update before your assertion runs.",
+    "options": [
+      {
+        "id": "a",
+        "text": "To slow the test down"
+      },
+      {
+        "id": "b",
+        "text": "DOM updates are asynchronous, so awaiting ensures the DOM reflects the change before you assert"
+      },
+      {
+        "id": "c",
+        "text": "trigger returns the component"
+      },
+      {
+        "id": "d",
+        "text": "It's never necessary"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-21",
+    "topic": "tooling-typescript",
+    "lesson": "testing-props-and-events",
+    "type": "single-choice",
+    "prompt": "How do you assert that a component emitted an event in a test?",
+    "explanation": "wrapper.emitted('eventName') returns the recorded emissions and their payloads, so you can assert the event fired with the right data.",
+    "options": [
+      {
+        "id": "a",
+        "text": "wrapper.emitted('eventName')"
+      },
+      {
+        "id": "b",
+        "text": "wrapper.props('eventName')"
+      },
+      {
+        "id": "c",
+        "text": "wrapper.html('eventName')"
+      },
+      {
+        "id": "d",
+        "text": "console.log only"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "tooling-typescript-22",
+    "topic": "tooling-typescript",
+    "lesson": "testing-pinia-router",
+    "type": "fill-blank",
+    "prompt": "The fast, Vite-native test runner used for Vue unit tests is called ______. (one word)",
+    "explanation": "Vitest is a Vite-native test runner that shares your Vite config, so tests understand the same TypeScript and SFC setup.",
+    "answer": [
+      "Vitest",
+      "vitest"
+    ]
+  },
+  {
+    "id": "tooling-typescript-23",
+    "topic": "tooling-typescript",
+    "lesson": "vite-build-production",
+    "type": "single-choice",
+    "prompt": "What should component tests primarily focus on?",
+    "explanation": "Testing behavior (what the user sees and does, and what the component emits) keeps tests robust when you refactor internals.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Internal private refs and implementation details"
+      },
+      {
+        "id": "b",
+        "text": "User-visible behavior: rendered output, interactions, and emitted events"
+      },
+      {
+        "id": "c",
+        "text": "The exact number of lines of code"
+      },
+      {
+        "id": "d",
+        "text": "CSS file sizes"
+      }
+    ],
+    "answer": "b"
+  },
+  {
+    "id": "tooling-typescript-24",
+    "topic": "tooling-typescript",
+    "lesson": "testing-props-and-events",
+    "type": "ordering",
+    "prompt": "Order the typical Vite project workflow from start to shipping.",
+    "explanation": "Scaffold the project, develop with the dev server and HMR, produce a type-checked production build, then deploy the static dist/ files.",
+    "items": [
+      {
+        "id": "scaffold",
+        "text": "npm create vue@latest (scaffold)"
+      },
+      {
+        "id": "dev",
+        "text": "npm run dev (develop with HMR)"
+      },
+      {
+        "id": "build",
+        "text": "npm run build (vue-tsc + Vite bundle)"
+      },
+      {
+        "id": "deploy",
+        "text": "Deploy the static dist/ output"
+      }
+    ],
+    "answer": [
+      "scaffold",
+      "dev",
+      "build",
+      "deploy"
+    ]
+  },
+  {
+    "id": "events-forms-07",
+    "topic": "events-forms",
+    "lesson": "v-on-listening",
+    "type": "single-choice",
+    "prompt": "What does the .prevent event modifier do in Vue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Calls event.preventDefault() on the DOM event"
+      },
+      {
+        "id": "b",
+        "text": "Stops the event from bubbling up the DOM tree"
+      },
+      {
+        "id": "c",
+        "text": "Prevents the handler from running more than once"
+      },
+      {
+        "id": "d",
+        "text": "Blocks all keyboard inputs inside the element"
+      }
+    ],
+    "answer": "a",
+    "explanation": "The .prevent modifier calls event.preventDefault() automatically, which is commonly used on form submissions to prevent full page reloads."
+  },
+  {
+    "id": "events-forms-08",
+    "topic": "events-forms",
+    "lesson": "v-model-modifiers",
+    "type": "single-choice",
+    "prompt": "Which modifier automatically typecasts the input string to a JavaScript number?",
+    "options": [
+      {
+        "id": "a",
+        "text": ".number"
+      },
+      {
+        "id": "b",
+        "text": ".trim"
+      },
+      {
+        "id": "c",
+        "text": ".lazy"
+      },
+      {
+        "id": "d",
+        "text": ".parse"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Adding .number (e.g. v-model.number=\"age\") automatically typecasts the input value to a number using parseFloat."
+  },
+  {
+    "id": "lifecycle-watchers-07",
+    "topic": "lifecycle-watchers",
+    "lesson": "watch-options",
+    "type": "single-choice",
+    "prompt": "How do you tell watch() to trigger its callback immediately upon creation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pass { immediate: true } in the options object"
+      },
+      {
+        "id": "b",
+        "text": "Use watchNow() instead of watch()"
+      },
+      {
+        "id": "c",
+        "text": "Call watch.trigger() right after declaring it"
+      },
+      {
+        "id": "d",
+        "text": "Set { deep: true } in options"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Setting { immediate: true } forces watch() to execute the callback immediately with the initial value of the source."
+  },
+  {
+    "id": "lifecycle-watchers-08",
+    "topic": "lifecycle-watchers",
+    "lesson": "on-unmounted",
+    "type": "single-choice",
+    "prompt": "Which lifecycle hook should be used to clear timers and remove global event listeners when a component leaves the DOM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "onUnmounted"
+      },
+      {
+        "id": "b",
+        "text": "onUpdated"
+      },
+      {
+        "id": "c",
+        "text": "onMounted"
+      },
+      {
+        "id": "d",
+        "text": "onErrorCaptured"
+      }
+    ],
+    "answer": "a",
+    "explanation": "onUnmounted runs after the component has unmounted, making it the canonical hook for tear-down tasks like clearing setInterval or removing window listeners."
+  },
+  {
+    "id": "events-vmodel-07",
+    "topic": "events-vmodel",
+    "lesson": "define-model",
+    "type": "single-choice",
+    "prompt": "In Vue 3.4+, which compiler macro simplifies two-way v-model binding inside <script setup>?",
+    "options": [
+      {
+        "id": "a",
+        "text": "defineModel()"
+      },
+      {
+        "id": "b",
+        "text": "defineVModel()"
+      },
+      {
+        "id": "c",
+        "text": "useModelBinding()"
+      },
+      {
+        "id": "d",
+        "text": "createModelRef()"
+      }
+    ],
+    "answer": "a",
+    "explanation": "defineModel() declares a prop and emit pair under the hood, returning a ref that automatically syncs two-way with the parent component."
+  },
+  {
+    "id": "events-vmodel-08",
+    "topic": "events-vmodel",
+    "lesson": "multiple-v-models",
+    "type": "single-choice",
+    "prompt": "How do you bind multiple custom models on a child component, such as first and last name?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use argument syntax like v-model:first=\"name1\" and v-model:last=\"name2\""
+      },
+      {
+        "id": "b",
+        "text": "You can only have one v-model per component; you must use custom props and emits for the rest"
+      },
+      {
+        "id": "c",
+        "text": "Pass an array to v-model=\"[name1, name2]\""
+      },
+      {
+        "id": "d",
+        "text": "Use v-models=\"first, last\""
+      }
+    ],
+    "answer": "a",
+    "explanation": "Vue allows multiple v-model bindings by specifying argument names: v-model:first and v-model:last match defineModel(\"first\") and defineModel(\"last\")."
+  },
+  {
+    "id": "composables-07",
+    "topic": "composables",
+    "lesson": "what-is-a-composable",
+    "type": "single-choice",
+    "prompt": "By convention, what prefix should the name of a Vue composable function start with?",
+    "options": [
+      {
+        "id": "a",
+        "text": "use (camelCase, e.g. useMouse)"
+      },
+      {
+        "id": "b",
+        "text": "get (e.g. getMouse)"
+      },
+      {
+        "id": "c",
+        "text": "with (e.g. withMouse)"
+      },
+      {
+        "id": "d",
+        "text": "composable (e.g. composableMouse)"
+      }
+    ],
+    "answer": "a",
+    "explanation": "By convention, Vue composables start with \"use\", following the standard pattern established across the Vue and modern frontend ecosystem."
+  },
+  {
+    "id": "composables-08",
+    "topic": "composables",
+    "lesson": "composable-conventions",
+    "type": "single-choice",
+    "prompt": "Why should a composable return a plain object containing refs rather than a reactive object?",
+    "options": [
+      {
+        "id": "a",
+        "text": "So consumers can destructure the returned properties without losing reactivity"
+      },
+      {
+        "id": "b",
+        "text": "Because plain objects consume less memory than reactive objects"
+      },
+      {
+        "id": "c",
+        "text": "Because reactive objects cannot be used in setup"
+      },
+      {
+        "id": "d",
+        "text": "Because TypeScript cannot type reactive objects"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Returning a plain object of refs allows consuming components to destructure the properties (e.g. const { x, y } = useMouse()) while preserving reactivity."
+  }
+]

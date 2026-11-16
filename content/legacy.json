@@ -1,0 +1,146 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "introduction-to-vue",
+    "title": "Introduction to Vue",
+    "lessons": ["what-is-vue", "progressive-framework", "options-vs-composition-api", "anatomy-of-an-sfc"]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "creating-an-application-and-template-syntax",
+    "title": "Creating an Application & Template Syntax",
+    "lessons": ["create-app-and-mount", "text-interpolation", "attribute-bindings", "directives-overview"]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "reactivity-fundamentals-ref",
+    "title": "Reactivity Fundamentals: ref()",
+    "lessons": ["ref-primitive", "template-auto-unwrapping", "reactive-objects", "ref-vs-reactive"]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "computed-properties",
+    "title": "Computed Properties",
+    "lessons": ["computed-basics", "computed-caching", "writable-computed"]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "conditional-and-list-rendering",
+    "title": "Conditional & List Rendering",
+    "lessons": ["v-if-conditional", "v-show-toggling", "v-if-vs-v-show", "v-for-lists", "v-for-key", "avoid-v-if-with-v-for"]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "class-and-style-bindings",
+    "title": "Class & Style Bindings",
+    "lessons": ["class-binding-object", "class-binding-array", "style-binding-object", "style-binding-array"]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "event-handling-and-forms",
+    "title": "Event Handling & Form Bindings",
+    "lessons": ["v-on-listening", "event-modifiers", "key-modifiers", "v-model-basics", "v-model-inputs", "v-model-modifiers"]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "lifecycle-hooks-and-watchers",
+    "title": "Lifecycle Hooks & Watchers",
+    "lessons": ["lifecycle-hooks", "on-mounted", "on-unmounted", "watch-source", "watch-options", "watch-effect", "watch-flush-timing"]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "components-basics-and-script-setup",
+    "title": "Components Basics & <script setup>",
+    "lessons": ["defining-components", "importing-components", "component-naming", "scoped-styles"]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "props-in-depth",
+    "title": "Props In Depth",
+    "lessons": ["define-props", "typing-props", "one-way-data-flow", "prop-validation", "passing-props"]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "component-events-and-v-model",
+    "title": "Component Events & v-model",
+    "lessons": ["define-emits", "emitting-events", "component-v-model", "define-model", "multiple-v-models"]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "slots",
+    "title": "Slots",
+    "lessons": ["default-slot", "slot-fallback", "named-slots", "scoped-slots"]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "provide-inject",
+    "title": "Provide / Inject",
+    "lessons": ["prop-drilling-problem", "provide-and-inject", "reactive-provide", "injection-keys", "app-provide"]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "composables",
+    "title": "Composables",
+    "lessons": ["what-is-a-composable", "mouse-tracker-composable", "fetch-composable", "composable-arguments", "composable-conventions"]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "vue-router",
+    "title": "Vue Router",
+    "lessons": ["router-setup", "router-link-view", "dynamic-routes", "programmatic-navigation", "nested-routes", "navigation-guards", "history-modes"]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "state-management-with-pinia",
+    "title": "State Management with Pinia",
+    "lessons": ["pinia-setup", "define-store", "store-state", "store-getters", "store-actions", "store-to-refs", "pinia-vs-vuex"]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "template-refs-and-composition-api-in-depth",
+    "title": "Template Refs & Composition API in Depth",
+    "lessons": ["template-refs-dom", "component-refs", "next-tick", "to-ref-and-to-refs", "unref-and-is-ref", "v-for-template-refs"]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "reactivity-in-depth",
+    "title": "Reactivity in Depth",
+    "lessons": ["how-reactivity-works", "shallow-ref", "shallow-reactive", "custom-ref", "to-raw-and-mark-raw"]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "teleport-and-suspense",
+    "title": "Built-in Components: Teleport & Suspense",
+    "lessons": ["teleport-basics", "teleport-disabled", "suspense-component", "suspense-status"]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "transitions-and-animations",
+    "title": "Transitions & Animations",
+    "lessons": ["transition-basics", "transition-classes", "named-transitions", "transition-modes", "transition-group"]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "async-components-and-performance",
+    "title": "Async Components & Performance",
+    "lessons": ["define-async-component", "route-level-code-splitting", "keep-alive-component", "v-once-directive", "v-memo-directive"]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "custom-directives-and-plugins",
+    "title": "Custom Directives & Plugins",
+    "lessons": ["custom-directives-basics", "directive-hooks", "directive-binding-values", "vue-plugins"]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "typescript-with-vue",
+    "title": "TypeScript with Vue",
+    "lessons": ["typescript-sfc-setup", "typing-props-emits", "typing-refs", "generic-components", "type-checking-vue-tsc"]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "testing-and-tooling",
+    "title": "Testing & Tooling — Capstone",
+    "lessons": ["vitest-setup", "vue-test-utils-mount", "testing-props-and-events", "testing-pinia-router", "vite-build-production"]
+  }
+]

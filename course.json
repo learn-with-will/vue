@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/learn-with-will/course-shell/main/course.schema.json",
+  "id": "vue",
+  "name": "Vue Learn",
+  "subject": "Vue 3",
+  "description": "Learn Vue 3 in five-minute bites: short lessons, quizzes and progress tracking.",
+  "brand": {
+    "color": "#1f8a60",
+    "scale": {
+      "50": "#edfaf3",
+      "100": "#d1f4e2",
+      "200": "#a6e8c6",
+      "300": "#6fd8a6",
+      "400": "#42b883",
+      "500": "#2fa574",
+      "600": "#1f8a60",
+      "700": "#1a6f4e",
+      "800": "#185a40",
+      "900": "#154836",
+      "950": "#04271b"
+    },
+    "gradient": ["#1f8a60", "#42b883", "#35495e"],
+    "gradientDark": ["#42b883", "#6fd8a6", "#a6e8c6"]
+  },
+  "home": {
+    "badge": "Updated for Vue 3.5 & Composition API",
+    "headline": ["Learn Vue one ", "five‑minute bite", " at a time."],
+    "searchExamples": ["ref", "v-model", "pinia"],
+    "featuredLesson": "what-is-vue",
+    "featuredCode": {
+      "lang": "html",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue';\nconst count = ref(0);\n</script>\n\n<template>\n  <button @click=\"count++\">Count: {{ count }}</button>\n</template>"
+    },
+    "quizPreview": {
+      "topic": "Foundations & Templates",
+      "prompt": "What does it mean that Vue is a progressive framework?",
+      "options": [
+        "It only works with modern build tools",
+        "You can adopt it incrementally from a script tag to a full SPA",
+        "It only renders on a backend server"
+      ],
+      "selected": 1
+    }
+  },
+  "codeLanguages": ["typescript", "javascript", "html", "css", "bash", "json"]
+}
